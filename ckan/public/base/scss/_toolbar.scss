@@ -59,7 +59,7 @@
 
 .toolbar .breadcrumb .active a,
 .toolbar .breadcrumb a.active {
-    font-weight: bold;
+    color: $breadcrumbActiveTextColor;
 }
 
 .actions {

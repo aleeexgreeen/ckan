@@ -3,3 +3,8 @@
 .alert-error {
     @include alert-variant($errorBackground, $errorBorder, $errorText);
 }
+
+.alert {
+    border: unset;
+    border-top: map-get($map: $border-widths, $key: "4") solid $red-700;
+}
