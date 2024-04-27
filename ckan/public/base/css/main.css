@@ -5,6 +5,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --bs-blue: #3395ff;
   --bs-indigo: #6172f3;
@@ -49,7 +50,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 16, 24, 40;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --bs-font-sans-serif: "Noto Sans", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, fMonaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -13738,7 +13739,7 @@ td.diff_header {
 .account-masthead {
   min-height: 30px;
   color: #fff;
-  background: #0d7389 url("../../../base/images/bg.png");
+  background: #0d7389;
 }
 .account-masthead .account {
   float: right;
@@ -13803,7 +13804,7 @@ td.diff_header {
 }
 
 .masthead {
-  background: #119ab8 url("../../../base/images/bg.png");
+  background: #119ab8;
 }
 .masthead .debug {
   position: fixed;
