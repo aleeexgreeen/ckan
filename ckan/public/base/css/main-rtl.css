@@ -13686,7 +13686,7 @@ td.diff_header {
   padding: 30px;
 }
 .homepage .module-search {
-  color: #1d2939;
+  color: #000;
   padding: 10px;
   border: 1px solid #ccc;
 }
@@ -13743,7 +13743,7 @@ td.diff_header {
 }
 .account-masthead {
   min-height: 30px;
-  color: #1d2939;
+  color: #000;
   background: #e6e6e6;
 }
 .account-masthead .account {
@@ -13757,7 +13757,7 @@ td.diff_header {
 .account-masthead .account ul li a {
   display: block;
   text-decoration: none;
-  color: #565f6b;
+  color: #404040;
   font-size: 13px;
   font-weight: bold;
   padding: 0 10px;
@@ -13773,7 +13773,7 @@ td.diff_header {
   left: -9999px;
 }
 .account-masthead .account ul li a:hover {
-  color: #3f4957;
+  color: #262626;
   background-color: #d9d9d9;
   text-decoration: none;
 }
@@ -13791,14 +13791,14 @@ td.diff_header {
   background-color: #d9d9d9;
   border-radius: 4px;
   text-shadow: none;
-  color: #565f6b;
+  color: #404040;
 }
 .account-masthead .account .notifications a:hover span {
-  color: #1d2939;
+  color: #000;
   background-color: #cccccc;
 }
 .account-masthead .account .notifications.notifications-important a span.badge {
-  color: #1d2939;
+  color: #000;
   background-color: #C9403A;
 }
 .account-masthead .account.authed .image {
@@ -13912,16 +13912,19 @@ td.diff_header {
   }
 }
 .site-footer {
-  background: #fff url("../../../base/images/bg.png");
+  background: #030d38;
   padding: 20px 0;
+}
+.site-footer p {
+  color: #fff;
 }
 .site-footer label,
 .site-footer small,
 .site-footer .small {
-  color: #89d5e6;
+  color: #fff;
 }
 .site-footer a {
-  color: #89d5e6;
+  color: #6d83ab;
 }
 .site-footer .footer-links ul {
   margin: 0;
@@ -13930,7 +13933,7 @@ td.diff_header {
   margin-bottom: 5px;
 }
 .site-footer .attribution p {
-  color: #89d5e6;
+  color: #fff;
   font-size: 1rem;
 }
 .site-footer .attribution .ckan-footer-logo {
@@ -13940,6 +13943,10 @@ td.diff_header {
   margin-top: 2px;
   background: url("../../../base/images/ckan-logo-footer.png") no-repeat top left;
   text-indent: -900em;
+}
+.site-footer .copyright {
+  background-color: #000;
+  display: flex;
 }
 .site-footer .lang-select .form-group {
   width: 100%;

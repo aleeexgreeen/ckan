@@ -1,5 +1,8 @@
 .site-footer {
-    background: $mastheadBackgroundColor url("#{$bgPath}");
+    p {
+        color: $footerTextColor;
+    }
+    background: $footerBackgroundColor;
     padding: 20px 0;
     & label,
     small {
@@ -30,6 +33,10 @@
             background: url("#{$imagePath}/ckan-logo-footer.png") no-repeat top left;
             text-indent: -900em;
         }
+    }
+    .copyright {
+        background-color: $black;
+        display: flex;
     }
     .lang-select {
         .form-group { 
