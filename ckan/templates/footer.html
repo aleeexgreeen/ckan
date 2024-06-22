@@ -7,40 +7,48 @@
         {% block footer_attribution %}
           <p>{% trans %}Powered by <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}<a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></p>
         {% endblock %}
-        {% block footer_nav %}
+      </div>
+      {% block footer_nav %}
+        <div class="col-md-2 attribution">
+          <h2>About Us</h2>
           <ul class="list-unstyled">
-            {% block footer_links %}
+            {% block footer_links_ckan %}
+              <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
+              {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+              <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
+              <li><a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a></li>
             {% endblock %}
           </ul>
-        {% endblock %}
-      </div>
-      <div class="col-md-2 attribution">
-        <h2>About Us</h2>
-        <ul class="list-unstyled">
-          {% block footer_links_ckan %}
-            <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
-            {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-            <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
-            <li><a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a></li>
-          {% endblock %}
-        </ul>
-      </div>
-      <div class="col-md-2 attribution">
-        <h2>Solutions</h2>
-      </div>
-      <div class="col-md-2 attribution">
-        <h2>Contact</h2>
-      </div>
+        </div>
+        <div class="col-md-2 attribution">
+          <h2>Solutions</h2>
+          <ul class="list-unstyled">
+            {% block footer_links %}
+              <li><a href="{{ h.url_for('dataset.search') }}">{{ _('Datasets') }}</a></li>
+              <li><a href="{{ h.url_for('organization.index') }}">{{ _('Organizations') }}</a></li>
+              <li><a href="{{ h.url_for('group.index') }}">{{ _('Groups') }}</a></li>
+              <li><a href="{{ h.url_for('home.about') }}">{{ _('About') }}</a></li>
+            {% endblock %}
+          </ul>
+        </div>
+        <div class="col-md-2 attribution">
+          <h2>Contact</h2>
+        </div>
+      {% endblock %}
     </div>
   </div>
   <div class="copyright">
-    <div class="col-md-9">
-      <p>© 2024 CKAN. All rights reserved.</p>
-    </div>
-    <div class="col-md-3">
-      {% block footer_lang %}
-        {% snippet "snippets/language_selector.html" %}
-      {% endblock %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <span>© 2024 CKAN. All rights reserved.</span>
+        </div>
+        <div class="col-md-3">
+          {% block footer_lang %}
+            {% snippet "snippets/language_selector.html" %}
+          {% endblock %}
+        </div>
+      </div>
     </div>
   </div>
   {% endblock %}

@@ -44,7 +44,6 @@
 
 .main {
     padding: 20px 0;
-    background: $layoutBackgroundColor url("#{$bgPath}");
 }
 
 .main:after,
@@ -162,12 +161,6 @@
                 margin-top: 0;
             }
         }
-    }
-}
-
-@include media-breakpoint-up(sm) {
-    .hero {
-        background: url("#{$imagePath}/background-tile.png");
     }
 }
 

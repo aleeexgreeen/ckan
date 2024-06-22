@@ -1,9 +1,9 @@
 .site-footer {
-    p {
+    span, p, h2 {
         color: $footerTextColor;
     }
     background: $footerBackgroundColor;
-    padding: 20px 0;
+    padding-top: 20px;
     & label,
     small {
         color: $footerTextColor;
@@ -19,24 +19,25 @@
             }
         }
     }
+    .ckan-footer-logo {
+        display: inline-block;
+        width: 68px;
+        height: 21px;
+        margin-top: 2px;
+        background: url("#{$imagePath}/ckan-logo-footer.png") no-repeat top left;
+        text-indent: -900em;
+    }
 
     .attribution {
         p  {
             color: $footerTextColor;
             font-size: $h5-font-size;
         }
-        .ckan-footer-logo {
-            display: block;
-            width: 68px;
-            height: 21px;
-            margin-top: 2px;
-            background: url("#{$imagePath}/ckan-logo-footer.png") no-repeat top left;
-            text-indent: -900em;
-        }
     }
     .copyright {
         background-color: $black;
         display: flex;
+        padding: 20px;
     }
     .lang-select {
         .form-group { 
