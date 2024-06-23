@@ -9,19 +9,26 @@
           </a>
         {% endblock %}
         {% block group_item_header_title %}
-          <h3 class="media-heading"><a href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">{{ group.title or group.name }}</a></h3>
+          <h3><a href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">{{ group.title or group.name }}</a></h3>
         {% endblock %}
         {% block group_item_header_description %}
-          {% if group.description %}
-              <p>{{ h.markdown_extract(group.description, 120)|urlize }}</p>
+          <p>
+          {% if group.package_count %}
+            {{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}
+          {% elif group.package_count == 0 %}
+            {{ _('0 Datasets') }}
           {% endif %}
+        </p>
         {% endblock %}
       </header>
     {% endblock %}
-    {% block group_item_content %}
+    {# {% block group_item_content %}
+      {% if group.description %}
+        <p>{{ h.markdown_extract(group.description, 120)|urlize }}</p>
+      {% endif %}
       {% set list_class = "list-unstyled dataset-list" %}
       {% set item_class = "dataset-item module-content" %}
       {% snippet 'snippets/package_list.html', packages=group.packages, list_class=list_class, item_class=item_class %}
-    {% endblock %}
+    {% endblock %} #}
   </section>
 {% endblock %}

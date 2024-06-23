@@ -11707,17 +11707,28 @@ a.tag:hover {
   margin-top: 0;
 }
 
+.org-cards .module-image {
+  width: 200px;
+  height: 50px;
+  margin-bottom: 24px;
+}
+.org-cards .module-image img {
+  max-width: 200px;
+  max-height: 50px;
+  width: 200px;
+  height: 50px;
+}
+
 .module-image {
   float: left;
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   line-height: 50px;
-  text-align: center;
   margin-right: 15px;
 }
 .module-image img {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 64px;
+  max-height: 64px;
   vertical-align: middle;
 }
 
@@ -13732,7 +13743,27 @@ td.diff_header {
 }
 .homepage .module-feeds {
   padding: 2rem 0;
-  background: #e4e7ec url("../../../base/images/bg.png");
+}
+.homepage .module-feeds.groups, .homepage .module-feeds.org {
+  background: #e4e7ec;
+}
+.homepage .module-feeds .featured-groups {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 12px;
+  row-gap: 12px;
+}
+.homepage .module-feeds .featured-groups .group-cards.module-heading {
+  border-radius: 12px;
+  row-gap: 1rem;
+}
+.homepage .module-feeds .featured-groups .module-heading {
+  display: grid;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
 }
 
 @media (max-width: 767.98px) {

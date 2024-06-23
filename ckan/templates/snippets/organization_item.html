@@ -11,17 +11,24 @@
         {% block organization_item_header_title %}
           <h3 class="media-heading"><a href="{{ url }}">{{ organization.title or organization.name }}</a></h3>
         {% endblock %}
-        {% block organization_item_header_description %}
-          {% if organization.description %}
-              <p>{{ h.markdown_extract(organization.description, 120)|urlize }}</p>
+        <p>
+          {% if organization.package_count %}
+            {{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}
+          {% elif organization.package_count == 0 %}
+            {{ _('0 Datasets') }}
           {% endif %}
-        {% endblock %}
+        </p>
       </header>
+    {% endblock %}
+    {# {% block organization_item_header_description %}
+      {% if organization.description %}
+          <p>{{ h.markdown_extract(organization.description, 120)|urlize }}</p>
+      {% endif %}
     {% endblock %}
     {% block organization_item_content %}
       {% set list_class = "list-unstyled dataset-list" %}
       {% set item_class = "dataset-item module-content" %}
       {% snippet 'snippets/package_list.html', packages=organization.packages, list_class=list_class, item_class=item_class %}
-    {% endblock %}
+    {% endblock %} #}
   </section>
 {% endblock %}

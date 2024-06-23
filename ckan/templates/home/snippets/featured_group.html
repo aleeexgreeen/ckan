@@ -1,7 +1,10 @@
-{% set groups = h.get_featured_groups() %}
-
-{% for group in groups %}
-  <div class="card box">
-    {% snippet 'snippets/group_item.html', group=group %}
-  </div>
-{% endfor %}
+{% set groups = h.get_featured_groups(count=6) %}
+<h2>Groups</h2>
+<p> Browse groups</p>
+<div class="featured-groups">
+  {% for group in groups %}
+    <div class="groups-card">
+      {% snippet 'snippets/group_item.html', group=group %}
+    </div>
+  {% endfor %}
+</div>
