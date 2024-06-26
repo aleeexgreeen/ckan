@@ -52,15 +52,15 @@
 }
 
 @mixin list-unstyled {
-    margin: 0;
     list-style: none;
 }
 
 @mixin simple-item {
     font-size: 12px;
+    background-color: $white;
     line-height: math.div(14em,12);
-    padding: 7px $gutterX;
-    border-bottom: 1px dotted $genericBorderColor;
+    border-bottom: 1px solid $genericBorderColor;
+    border-radius: 6px;
     &:last-of-type {
         border-bottom: 0;
     }
@@ -115,20 +115,15 @@ a.tag:hover {
 
 
 .module-narrow .simple-list>li {
-    padding-left: $gutterSmallX;
-    padding-right: $gutterSmallX;
+    padding-left: $nav-link-padding-x;
+    padding-right: $nav-link-padding-x;
     position: relative;
 }
 
 .listing li {
-    text-align: right; //overflow: hidden;
-    //white-space: nowrap;
-    //text-overflow: ellipsis;
+    text-align: right;
     margin-bottom: 5px;
 }
-
-.listing .key,
-.listing .value {}
 
 .listing .key {
     clear: right;

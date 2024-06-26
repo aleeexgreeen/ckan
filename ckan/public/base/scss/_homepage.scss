@@ -1,23 +1,38 @@
 .homepage {
     .hero {
-        background: url("#{$imagePath}/background-tile.png");
-        padding: 20px 0;
+        padding: 20px;
+        .container{
+            border-radius: 24px;
+            background: linear-gradient(0deg, rgba(3, 13, 56, 0.8), rgba(3, 13, 56, 0.8)), url("#{$imagePath}/hero.png");
+            .row {
+                padding: 64px 32px;
+                align-items: center;
+            }
+        }
     }
     .module-promotion {
-        background: $white;
-        padding: 30px;
+        p {
+            color: #93a1e9;
+            font-size: 24px;
+        }
+    }
+    h1 {
+        color: $white;
+        font-size: 60px;
+        font-weight: 700;
     }
     .module-search {
         color: $mastheadTextColor;
-        padding: 10px;
-        border: 1px solid #ccc;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 24px;
         .search-form {
             @include border-radius($card-border-radius);
-            background-color: $mastheadBackgroundColor;
-            padding: 30px 20px;
+            margin-bottom: unset;
             input {
                 font-size: 16px;
-                padding: 15px;
             }
             button {
                 border: none;
@@ -25,81 +40,64 @@
             }
         }
         .search-input {
+            color: $black;
             display: flex;
             bottom {
                 margin-left: -30px;
                 align-items: center;
             }
         }
-        .tags {
-            h3 {
-                font-size: $font-size-base;
-                line-height: $line-height-base;
-                padding: 2px 8px;
-                margin-top: -5px;
-            }
-            margin-top: -5px;
-            padding: 5px 10px 10px 10px;
-            background-color: darken($mastheadBackgroundColor, 10%);
-            h3,
-            .tag {
-                display: block;
-                float: left;
-                margin: 5px 10px 0 0;
-            }
+        h2 {
+            color: $white;
+            font-size: 96px;
+            text-align: right;
+            display: grid;
+            margin-bottom: 24px;
+            font-weight: 700;
         }
-    }
-    .module-stats {
-        margin-top: $spacer * 1;
-        color: $layoutTextColor;
-        .card {
-            padding: ($spacer * 1.5) ($spacer * 1.75);
-            ul {
-                @include list-unstyled;
-                @include clearfix;
-                padding: 0;
-                li {
-                    float: left;
-                    width: 25%;
-                    font-weight: 300;
-                    a {
-                        display: block;
-                        b {
-                            display: block;
-                            font-size: $font-size-base;
-                            line-height: 1.5;
-                        }
-                        &:hover {
-                            text-decoration: none;
-                        }
-                    }
-                }
-            }
+        h2 span {
+            color: $white;
+            font-size: 30px;
+            font-weight: 400;
         }
     }
     .module-feeds {
         padding: $spacer * 2 0;
-        background: $layoutBackgroundColor url($bgPath);
-        .module-stats {
-            margin-top: 0 
+        &.groups, &.org {
+            background: $layoutBackgroundColor;
         }
+        .featured-groups {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(0, 1fr);
+            grid-template-rows: repeat(2,auto);
+            column-gap: 12px;
+            row-gap: 12px;
+            .group-cards.module-heading {
+                border-radius: 12px;
+                row-gap: 1rem;
+            }
+            .module-heading{
+                display: grid;
+                background-color: $white;
+                border: none;
+                border-radius: 6px;
+            }
+        }
+        
     }
 }
+
 @include media-breakpoint-down(md){
     .homepage {
         .module-search {
             margin-top: $spacer * .5;
-        }
-        .module-stats {
-            margin-top: $spacer * .5;
-            margin-bottom: $spacer * .5;
         }
         .module-feeds {
             .card {
                 margin-top: $spacer * 1;
                 margin-bottom: $spacer * 1;
             }
-
         }
     }
 }

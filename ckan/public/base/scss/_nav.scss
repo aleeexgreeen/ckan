@@ -20,11 +20,13 @@
     color: $navLinkColor;
     font-size: $font-size-base;
     line-height: $line-height-base;
-    margin: -7px (-$gutterX);
     padding: 10px ($gutterX);
     &:hover {
         text-decoration: none;
-        background-color: #eeeeee;
+        background-color: $gray-50;
+    }
+    &:focus{
+        background-color: $gray-200;
     }
     .badge {
         background-color: $emptyTextColor;
@@ -33,17 +35,17 @@
 }
     .nav-item.active,
     .nav-aside li.active {
-        background-color: $navActiveBackgroundColor;
+        background-color: $primary;
     }
 
     .nav-item.active>a,
     .nav-aside li.active a {
         position: relative;
         color: $navItemActiveTextColor;
-        background-color: $navItemActiveBackgroundColor;
+        background-color: $primary;
         &:hover {
             color: $navItemActiveTextColor;
-            background-color: $navItemActiveBackgroundColor;
+            background-color: $primary;
         }
     }
 
@@ -60,7 +62,6 @@
         right: -$navItemActiveArrowSize;
         width: $navItemActiveArrowSize;
         height: 34px;
-        // background-image: url("${imagePath}/nav-active.png?1");
     }
 
     .nav-pills>li {
@@ -73,7 +74,6 @@
     .nav-item.active>a span,
     .nav-aside li.active a span {
         white-space: nowrap;
-        // display: block;
     }
 }
 
@@ -123,6 +123,9 @@
 .nav-item{
     .facet-close {
         float: right;
+		position: relative;
+		transform: translateY(0);
+		left: 10px;
     }
 }
 
