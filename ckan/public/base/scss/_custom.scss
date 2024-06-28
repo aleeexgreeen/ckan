@@ -4,11 +4,22 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     font-weight: 600;
 }
 
-.btn-light, .btn-default {
-    @extend .btn-light;
+.btn-default {
     border: $table-border-color solid 1px;
     &:hover {
         background-color: $gray-300 !important;
-        border-color: $gray-300;
+    }
+}
+
+.btn-light {
+    &:hover {
+        background-color: $gray-300 !important;
+        border: $table-border-color solid 1px;
+    }
+}
+@include media-breakpoint-down(md){
+    .btn-light {
+        width: 100%;
+        display: block !important;
     }
 }

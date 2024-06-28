@@ -31,6 +31,7 @@
         .search-form {
             @include border-radius($card-border-radius);
             margin-bottom: unset;
+            padding-bottom: unset;
             input {
                 font-size: 16px;
             }
@@ -73,6 +74,7 @@
             grid-template-rows: repeat(2,auto);
             column-gap: 12px;
             row-gap: 12px;
+            margin-bottom: $spacer-4;
             .group-cards.module-heading {
                 border-radius: 12px;
                 row-gap: 1rem;
@@ -90,10 +92,47 @@
 
 @include media-breakpoint-down(md){
     .homepage {
+        .hero {
+            .container {
+                .row {
+                    padding: 32px 12px;
+                }
+            }
+        }
+        .module-promotion {
+            text-align: center;
+            p {
+                color: #93a1e9;
+                font-size: 16px;
+            }
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+        }
         .module-search {
             margin-top: $spacer * .5;
+            align-items: normal;
+            h2 {
+                font-size: 36px;
+                text-align: center;
+                display: grid;
+                margin-bottom: 24px;
+                font-weight: 700;
+            }
+            h2 span {
+                color: $white;
+                font-size: 16px;
+                font-weight: 400;
+            }
         }
         .module-feeds {
+            .featured-groups {
+                display: grid;
+                grid-auto-flow: row;
+                row-gap: 12px;
+                margin-bottom: $spacer-4;
+            }
             .card {
                 margin-top: $spacer * 1;
                 margin-bottom: $spacer * 1;
