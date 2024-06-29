@@ -5,7 +5,6 @@
         {% set title = group.title or group.name %}
         {% block group_item_header_image %}
           {% if group.image_display_url %}
-            <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" />
             <a class="module-image" href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">
               <img src="{{ group.image_display_url }}" alt="{{ group.name }}" />
             </a>
