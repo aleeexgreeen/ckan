@@ -1,40 +1,40 @@
+{% set url=h.url_for(group.type ~ '.read', id=group.name) %}
 {% block group_item %}
   <section class="group-list module module-narrow module-shallow">
-    {% block group_item_header %}
-      <header class="module-heading">
-        {% set title = group.title or group.name %}
-        {% block group_item_header_image %}
-          {% if group.image_display_url %}
-            <a class="module-image" href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">
-              <img src="{{ group.image_display_url }}" alt="{{ group.name }}" />
-            </a>
-          {% else %}
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-              <path d="M34.6667 29.3333H47.4667C50.4537 29.3333 51.9471 29.3333 53.088 29.9146C54.0915 30.426 54.9074 31.2419 55.4187 32.2454C56 33.3862 56 34.8797 56 37.8667V56M34.6667 56V16.5333C34.6667 13.5464 34.6667 12.0529 34.0854 10.9121C33.5741 9.90852 32.7582 9.09262 31.7547 8.5813C30.6138 8 29.1203 8 26.1334 8H16.5334C13.5464 8 12.053 8 10.9121 8.5813C9.90856 9.09262 9.09266 9.90852 8.58134 10.9121C8.00004 12.0529 8.00004 13.5464 8.00004 16.5333V56M58.6667 56H5.33337M17.3334 18.6667H25.3334M17.3334 29.3333H25.3334M17.3334 40H25.3334" stroke="#0A1D5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          {% endif %}
-        {% endblock %}
-        {% block group_item_header_title %}
-          <h3><a href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">{{ group.title or group.name }}</a></h3>
-        {% endblock %}
-        {% block group_item_header_description %}
-          <p>
-          {% if group.package_count %}
-            {{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}
-          {% elif group.package_count == 0 %}
-            {{ _('0 Datasets') }}
-          {% endif %}
-        </p>
-        {% endblock %}
-      </header>
-    {% endblock %}
-    {# {% block group_item_content %}
-      {% if group.description %}
-        <p>{{ h.markdown_extract(group.description, 120)|urlize }}</p>
-      {% endif %}
-      {% set list_class = "list-unstyled dataset-list" %}
-      {% set item_class = "dataset-item module-content" %}
-      {% snippet 'snippets/package_list.html', packages=group.packages, list_class=list_class, item_class=item_class %}
-    {% endblock %} #}
+    <a href="{{ url }}">
+      {% block group_item_header %}
+        <header class="module-heading">
+          {% set title = group.title or group.name %}
+          {% block group_item_header_image %}
+            {% if group.image_display_url %}
+              <figure class="module-image" href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">
+                <img src="{{ group.image_display_url }}" alt="{{ group.name }}" />
+              </figure>
+            {% else %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <path d="M34.6667 29.3333H47.4667C50.4537 29.3333 51.9471 29.3333 53.088 29.9146C54.0915 30.426 54.9074 31.2419 55.4187 32.2454C56 33.3862 56 34.8797 56 37.8667V56M34.6667 56V16.5333C34.6667 13.5464 34.6667 12.0529 34.0854 10.9121C33.5741 9.90852 32.7582 9.09262 31.7547 8.5813C30.6138 8 29.1203 8 26.1334 8H16.5334C13.5464 8 12.053 8 10.9121 8.5813C9.90856 9.09262 9.09266 9.90852 8.58134 10.9121C8.00004 12.0529 8.00004 13.5464 8.00004 16.5333V56M58.6667 56H5.33337M17.3334 18.6667H25.3334M17.3334 29.3333H25.3334M17.3334 40H25.3334" stroke="#0A1D5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            {% endif %}
+          {% endblock %}
+          {% block group_item_header_title %}
+            <h3>{{ group.title or group.name }}</h3>
+          {% endblock %}
+          {% block group_item_header_description %}
+            <p>
+              {% if group.package_count %}
+                {{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}
+              {% elif group.package_count == 0 %}
+                {{ _('0 Datasets') }}
+              {% endif %}
+            </p>
+          {% endblock %}
+        </header>
+      {% endblock %}
+      {# {% block group_item_content %}
+        {% if group.description %}
+          <p>{{ h.markdown_extract(group.description, 120)|urlize }}</p>
+        {% endif %}
+      {% endblock %} #}
+    </a>
   </section>
 {% endblock %}
