@@ -62,7 +62,7 @@
       <div class="debug">Blueprint : {{ g.blueprint }}<br />View : {{ g.view }}</div>
       {% endif %} {% endblock %}
       <nav class="navbar navbar-expand-lg navbar-light">
-        <hgroup class="{{ g.header_class }} navbar-left">
+        <hgroup class="{{ g.header_class }} navbar-left col-md-3">
 
         {% block header_logo %}
         {% if g.site_logo %}
@@ -86,8 +86,8 @@
           <span class="fa fa-bars"></span>
         </button>
 
-      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <div class="main-navbar collapse navbar-collapse col-md-9" id="main-navigation-toggle">
+          <ul class="navbar-nav mb-2 mb-lg-0 col-md-10">
             {% block header_site_navigation %}
               {% block header_site_navigation_tabs %}
                 {% set org_type = h.default_group_type('organization') %}
@@ -102,16 +102,17 @@
                   ('home.about', _('About')) ) }}
               {% endblock %}
             </ul>
-
+            {% block header_account_notlogged %}
+              <div class="col-md-2">
+                <a class="btn login-btn" href="{{ h.url_for('user.login') }}">Login
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.5 2.5H13.5C14.9001 2.5 15.6002 2.5 16.135 2.77248C16.6054 3.01217 16.9878 3.39462 17.2275 3.86502C17.5 4.3998 17.5 5.09987 17.5 6.5V13.5C17.5 14.9001 17.5 15.6002 17.2275 16.135C16.9878 16.6054 16.6054 16.9878 16.135 17.2275C15.6002 17.5 14.9001 17.5 13.5 17.5H12.5M8.33333 5.83333L12.5 10M12.5 10L8.33333 14.1667M12.5 10L2.5 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            {% endblock %}
         {% endblock %}
         </div>
-        {% block header_account_notlogged %}
-        <a class="btn login-btn" href="{{ h.url_for('user.login') }}">Login
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M12.5 2.5H13.5C14.9001 2.5 15.6002 2.5 16.135 2.77248C16.6054 3.01217 16.9878 3.39462 17.2275 3.86502C17.5 4.3998 17.5 5.09987 17.5 6.5V13.5C17.5 14.9001 17.5 15.6002 17.2275 16.135C16.9878 16.6054 16.6054 16.9878 16.135 17.2275C15.6002 17.5 14.9001 17.5 13.5 17.5H12.5M8.33333 5.83333L12.5 10M12.5 10L8.33333 14.1667M12.5 10L2.5 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        {% endblock %}
       </nav>
     </div>
   </header>
