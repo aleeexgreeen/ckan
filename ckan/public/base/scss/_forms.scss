@@ -6,8 +6,7 @@
     display: block;
 }
 
-.btn,
-label {
+.btn {
     font-weight: bold;
 }
 
@@ -19,7 +18,7 @@ label {
 
 label {
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 label:after {
@@ -35,7 +34,6 @@ label.checkbox:after {
     position: relative;
     margin-left: initial;
     margin-right: math.div($grid-gutter-width, 6);
-    top: 2px;
 }
 
 .checkbox {

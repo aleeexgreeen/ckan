@@ -4,18 +4,20 @@
 {% block content %}
 <div>
   <div id="content" class="login_container">
-      <div class="row login_wrapper">
-          <div class="col-md-6 login_content" role="main">
+      <div class="row login_wrapper" role="main">
+          <div>
             <h1 class="page-heading">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
+          </div>
+          <div class="col-md-6 login_content">
             {% block secondary %}
-            <div>
+            <div class="login_options">
               {% block secondary_content %}
               {% if h.check_access('user_create') %}
                 {% block help_register %}
                 <section class="module module-narrow module-shallow">
                   {% block help_register_inner %}
-                    <h2><a href="{{ h.url_for('user.register') }}">{{ _('Create an Account') }}</a></h2>
                     <div>
+                      <h2 class="h5"><a href="{{ h.url_for('user.register') }}">{{ _('Create an Account') }}</a></h2>
                       <p>{% trans %}Then sign right up, it only takes a minute.{% endtrans %}</p>
                     </div>
                   {% endblock %}
@@ -26,8 +28,8 @@
               {% block help_forgotten %}
               <section class="module module-narrow module-shallow">
                 {% block help_forgotten_inner %}
-                <h2><a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a></h2>
                 <div>
+                  <h2 class="h5"><a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a></h2>
                   <p>{% trans %}No problem, use our password recovery form to reset it.{% endtrans %}</p>
                 </div>
                 {% endblock %}
