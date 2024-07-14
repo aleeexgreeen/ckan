@@ -12619,6 +12619,50 @@ select[data-module=autocomplete] {
   margin-bottom: 0.375rem;
 }
 
+.select2-container.language-toggle .select2-choice {
+  all: unset;
+  width: 99%;
+  display: block;
+}
+
+.lang-select-svg {
+  padding: 10px 16px;
+}
+
+.language-toggle.select2-dropdown-open.select2-drop-above .select2-choice {
+  all: unset;
+  border: 1px solid #5897fb;
+  display: flex;
+}
+
+.select2-container.language-toggle .select2-choice .select2-arrow b {
+  background: url("../images/chevron-down.png") no-repeat;
+}
+
+.select2-dropdown-open.language-toggle .select2-choice .select2-arrow b {
+  background: url("../images/chevron-up.png") no-repeat, #fff;
+}
+
+.select2-container.language-toggle .select2-choice > .select2-chosen {
+  padding: 10px 16px;
+}
+
+.select2-container.language-toggle .select2-choice .select2-arrow {
+  all: unset;
+  display: inline-block;
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 16px;
+}
+
+.lang-select-container {
+  display: inline-flex;
+  gap: 6px;
+}
+
 .select2-container-multi {
   margin-top: 0;
 }
