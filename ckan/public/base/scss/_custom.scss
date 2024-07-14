@@ -50,3 +50,16 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .login_wrapper {
     padding: 24px;
 }
+
+.form-group .controls i {
+    position: absolute;
+}
+
+.form-group .controls .icon {
+    padding: 14px;
+}
+
+.form-group .controls .icon + .form-control {
+    width: 100%;
+    padding-left: 34px;
+}
