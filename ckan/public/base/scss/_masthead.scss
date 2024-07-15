@@ -158,6 +158,10 @@ $notificationsBg: #C9403A;
         font-weight: 600;
         font-size: 16px;
     }
+    .login-btn-container {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @include media-breakpoint-down(lg) {
@@ -190,6 +194,10 @@ $notificationsBg: #C9403A;
                     }
                 }
             }
+        }
+        .login-btn-container {
+            display: flex;
+            justify-content: flex-start;
         }
     }
 }

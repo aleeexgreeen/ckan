@@ -11489,11 +11489,12 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
   .login_content {
     order: 1;
+    margin-top: 16px;
   }
 }
 @media (min-width: 576px) {
   .login_container {
-    padding: 120px;
+    padding: 120px 0;
     background-color: #f2f4f7;
   }
 
@@ -14036,6 +14037,10 @@ td.diff_header {
   font-weight: 600;
   font-size: 16px;
 }
+.masthead .login-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
 @media (max-width: 991.98px) {
   .masthead .main-navbar ul {
@@ -14067,6 +14072,12 @@ td.diff_header {
     color: #475467;
     pointer-events: none;
     cursor: default;
+  }
+}
+@media (max-width: 991.98px) {
+  .masthead .login-btn-container {
+    display: flex;
+    justify-content: flex-start;
   }
 }
 .site-footer {
