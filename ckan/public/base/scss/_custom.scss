@@ -25,12 +25,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     
     .login_content {
         order: 1;
+        margin-top: 16px;
     }
 }
 
 @include media-breakpoint-up(sm){
     .login_container {
-        padding: 120px;
+        padding: 120px 0;
         background-color: $gray-100;
     }
     .login_wrapper {
