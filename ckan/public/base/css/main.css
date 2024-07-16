@@ -14117,10 +14117,10 @@ td.diff_header {
 }
 .site-footer .ckan-footer-logo {
   display: inline-block;
-  width: 68px;
-  height: 21px;
+  width: 85px;
+  height: 29px;
   margin-top: 2px;
-  background: url("../../../base/images/ckan-logo-footer.png") no-repeat top left;
+  background: url("../../../base/images/ckan-logo-color.png") no-repeat top left;
   text-indent: -900em;
 }
 .site-footer .attribution p {
