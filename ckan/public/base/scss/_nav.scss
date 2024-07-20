@@ -128,6 +128,12 @@
 		left: 10px;
     }
 }
+@include media-breakpoint-up(md) {
+    .masthead .main-navbar ul {
+        padding-left: 40px;
+    }
+}
+
 
 // STACKED NAV
 // -----------
