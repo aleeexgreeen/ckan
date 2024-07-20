@@ -3,7 +3,7 @@ $notificationsBg: #C9403A;
     @extend .clearfix;
     min-height: 30px;
     color: $mastheadTextColor;
-    background: darken($mastheadBackgroundColor, 10%) url("#{$bgPath}");
+    background: darken($mastheadBackgroundColor, 10%);
     .account {
         float: right;
         ul {
@@ -78,16 +78,17 @@ $notificationsBg: #C9403A;
 }
 
 .masthead {
-    background: $mastheadBackgroundColor url("#{$bgPath}");
+    background: $mastheadBackgroundColor;
+    border-bottom: $gray-300 1px solid;
     @extend .p-2;
     .debug {
         position: fixed;
         top: 0;
         left: 0;
-        color: $white;
+        color: $gray-800;
         background-color: opacify($color: $primary, $amount: 0.3);
         padding: 2px 4px;
-        border: $white 1px solid;
+        border: $gray-300 1px solid;
         border-left: 0px;
         z-index: 9;
     }
@@ -129,7 +130,7 @@ $notificationsBg: #C9403A;
                 margin-right: 2px;;
                 a {
                     padding: ($spacer * .6)  ($spacer * .9);
-                    color: $white;
+                    color: $black;
                     text-decoration: none;
                 }
                 &:hover,
@@ -150,6 +151,17 @@ $notificationsBg: #C9403A;
             }
         }
     }
+    .login-btn {
+        background-color: #0a1d5e;
+        color: $white;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .login-btn-container {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @include media-breakpoint-down(lg) {
@@ -164,7 +176,7 @@ $notificationsBg: #C9403A;
                         padding: $nav-link-padding-y $nav-link-padding-x;
                         @include font-size($nav-link-font-size);
                         font-weight: $nav-link-font-weight;
-                        color: $white;
+                        color: $black;
                         text-decoration: if($link-decoration == none, null, none);
                         @include transition($nav-link-transition);
 
@@ -182,6 +194,10 @@ $notificationsBg: #C9403A;
                     }
                 }
             }
+        }
+        .login-btn-container {
+            display: flex;
+            justify-content: flex-start;
         }
     }
 }
