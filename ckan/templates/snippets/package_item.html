@@ -18,7 +18,7 @@ Example:
     {% block content %}
       <div class="dataset-content">
         {% block heading %}
-          <h2 class="dataset-heading">
+          <h3 class="dataset-card-title">
             {% block heading_private %}
               {% if package.private %}
                 <span class="dataset-private badge bg-secondary">
@@ -39,8 +39,9 @@ Example:
                 <span class="badge bg-danger">{{ _('Deleted') }}</span>
               {% endif %}
             {% endblock %}
-          </h2>
+          </h3>
         {% endblock %}
+        <p class="dataset-card-subtitle">Owner: {{ package.organization['title'] }}</p>
         {% block notes %}
           {% if notes %}
             <div>{{ notes|urlize }}</div>
