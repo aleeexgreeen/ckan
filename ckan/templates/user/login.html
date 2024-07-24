@@ -4,9 +4,17 @@
 {% block content %}
 <div class="login_container">
   <div id="content" class="container">
+    {% block main_content %}
       <div class="row login_wrapper" role="main">
           <div>
-            <h1 class="page-heading">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
+            {% block flash %}
+              <div class="flash-messages col-md-6 pull-right">
+                {% block flash_inner %}
+                  {{ super() }}
+                {% endblock flash_inner %}
+              </div>
+            {% endblock flash %}
+            <h1 class="page-heading col-md-6">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
           </div>
           <div class="col-md-6 login_content">
             {% block secondary %}
@@ -53,6 +61,7 @@
           {% endblock primary_content %}
         </div>
       </div>
+    {% endblock main_content %}
   </div>
 </div>
 {% endblock content %}
