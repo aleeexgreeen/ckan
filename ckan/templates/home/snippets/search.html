@@ -1,5 +1,6 @@
 {% set placeholder = _('Search datasets') %}
 {% set dataset_type = h.default_package_type() %}
+{% set stats = h.get_site_statistics() %}
 
 <div class="module-search">
   <form class="search-form" method="get" action="{% url_for dataset_type ~ '.search' %}">

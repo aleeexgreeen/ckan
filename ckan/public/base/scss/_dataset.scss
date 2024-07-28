@@ -54,10 +54,6 @@
     display: inline;
 }
 
-.dataset-resources li a {
-    background-color: $resourceFormatBackground;
-}
-
 .popular {
     color:#f29c2b;
 }
@@ -198,7 +194,8 @@
 
 .badge[data-format=csv],
 .badge[data-format*=csv] {
-    background-color: #856A00;
+    border: 1px solid #856A00;
+    color: #856A00;
 }
 
 .badge[data-format=xls],
@@ -208,7 +205,8 @@
 
 .badge[data-format=zip],
 .badge[data-format*=zip] {
-    background-color: #686868;
+    border: 1px solid #686868;
+    color: #686868;
 }
 
 .badge[data-format=api],
