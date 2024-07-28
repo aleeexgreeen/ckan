@@ -15,13 +15,13 @@
     min-height: 22px;
     @include border-radius($badge-border-radius);
     @include gradient-bg();
-  
+
     // Empty badges collapse automatically
     &:empty {
       display: none;
     }
   }
-  
+
   // Quick fix for badges in buttons
   .btn .badge {
     position: relative;

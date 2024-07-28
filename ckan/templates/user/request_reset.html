@@ -14,24 +14,22 @@
       </div>
       <div class="form-actions">
         {% block form_button %}
-        <button class="btn btn-primary" type="submit" name="reset">{{ _("Request Reset") }}</button>
-        {% endblock %}
+          <button class="btn btn-primary" type="submit" name="reset">{{ _("Request Reset") }}</button>
+        {% endblock form_button %}
       </div>
     </form>
-  {% endblock %}
-{% endblock %}
+  {% endblock form %}
+{% endblock primary_content_inner %}
 
 {% block secondary_content %}
   {% block help %}
-  <section class="module module-narrow module-shallow">
-    {% block help_inner %}
-    <h2 class="h5">{{ _('How does this work?') }}</h2>
-    <div>
-      <p>{% trans %}Enter your email address or username into the box and we
-        will send you an email with a link to enter a new password.
-        {% endtrans %}</p>
-    </div>
-    {% endblock %}
-  </section>
-  {% endblock %}
-{% endblock %}
+    <section class="module module-narrow module-shallow">
+      {% block help_inner %}
+        <h2 class="h5">{{ _('How does this work?') }}</h2>
+        <p>{% trans %}Enter your email address or username into the box and we
+            will send you an email with a link to enter a new password.
+            {% endtrans %}</p>
+      {% endblock help_inner %}
+    </section>
+  {% endblock help %}
+{% endblock secondary_content %}

@@ -12,10 +12,10 @@
   {% block help %}
     <section class="module module-narrow module-shallow">
       {% block help_inner %}
-        <h2 class="h5"><a href="{{ h.url_for('user.login') }}">{{ _('Login') }}</a></h2>
-        <div>
-          <p>{% trans %}Create datasets, groups and other exciting things{% endtrans %}</p>
-        </div>
-      {% endblock %}
-  {% endblock %}
-{% endblock %}
+        <h2 class="h5">
+          <a href="{{ h.url_for('user.login') }}">{{ _('Login') }}</a>
+        </h2>
+        <p>{{ _('Create datasets, groups and other exciting things') }}</p>
+      {% endblock help_inner %}
+  {% endblock help %}
+{% endblock secondary_content %}
