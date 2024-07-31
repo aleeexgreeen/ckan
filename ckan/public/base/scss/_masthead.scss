@@ -125,9 +125,9 @@ $notificationsBg: #C9403A;
     }
     .main-navbar {
         ul {
-            padding-right: 20px;
+            padding-left: 40px;
             li {
-                margin-right: 2px;;
+                margin-right: 2px;
                 a {
                     padding: ($spacer * .6)  ($spacer * .9);
                     color: $black;
@@ -137,8 +137,9 @@ $notificationsBg: #C9403A;
                 &:focus,
                 &.active {
                     a {
-                        border-radius: $spacer * 0.3;
-                        background-color: darken($mastheadBackgroundColor, 10%);
+                        border-radius: $border-radius-sm;
+                        background-color: $brand-50;
+                        color: $brand-800;
                     }
                 }
             }
@@ -176,7 +177,7 @@ $notificationsBg: #C9403A;
                         padding: $nav-link-padding-y $nav-link-padding-x;
                         @include font-size($nav-link-font-size);
                         font-weight: $nav-link-font-weight;
-                        color: $black;
+                        color: $brand-800;
                         text-decoration: if($link-decoration == none, null, none);
                         @include transition($nav-link-transition);
 
