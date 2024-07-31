@@ -14050,10 +14050,12 @@ td.diff_header {
   padding: 0.6rem 0.9rem;
   color: #000;
   text-decoration: none;
+  font-weight: 600;
 }
 .masthead .main-navbar ul li:hover a, .masthead .main-navbar ul li:focus a, .masthead .main-navbar ul li.active a {
-  border-radius: 0.3rem;
-  background-color: #e6e6e6;
+  border-radius: 0.25rem;
+  background-color: #D2DAEA;
+  color: #000312;
 }
 .masthead .main-navbar .site-search button {
   display: flex;
