@@ -195,3 +195,10 @@
         vertical-align: middle;
     }
 }
+
+.module-heading-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}

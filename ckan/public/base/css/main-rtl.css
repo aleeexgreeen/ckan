@@ -11760,6 +11760,13 @@ a.tag:hover {
   vertical-align: middle;
 }
 
+.module-heading-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
 .media-grid, .module-grid {
   list-style: none;
   padding-left: 0px;
@@ -13175,6 +13182,26 @@ select[data-module=autocomplete] {
   clear: both;
 }
 
+.dataset-item {
+  padding: 16px;
+  background-color: #f2f4f7;
+  margin-bottom: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.dataset-card-title {
+  margin-bottom: 0;
+}
+
+.dataset-card-subtitle {
+  color: #667085;
+  font-weight: 500;
+}
+
 /* diff styles */
 table.diff {
   font-family: Courier;
@@ -13320,6 +13347,7 @@ td.diff_header {
 }
 .group-list .module-heading p {
   color: #667085;
+  margin-bottom: 0;
 }
 
 .group-list .module-heading .media-image {
@@ -13786,6 +13814,12 @@ td.diff_header {
   font-size: 60px;
   font-weight: 700;
 }
+.homepage h2, .homepage .h2 {
+  color: #0A1D5E;
+}
+.homepage h3, .homepage .h3, .homepage h3 a, .homepage .h3 a {
+  color: #000;
+}
 .homepage .module-search {
   color: #000;
   display: flex;
@@ -13862,23 +13896,6 @@ td.diff_header {
   margin-bottom: 2rem;
   list-style: none;
   padding-left: unset;
-}
-.homepage .module-feeds .recent-packages .dataset-item {
-  padding: 16px;
-  background-color: #f2f4f7;
-  margin-bottom: 0;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-}
-.homepage .module-feeds .recent-packages .dataset-card-title {
-  margin-bottom: 0;
-}
-.homepage .module-feeds .recent-packages .dataset-card-subtitle {
-  color: #667085;
-  font-weight: 500;
 }
 
 @media (max-width: 767.98px) {
@@ -14050,12 +14067,14 @@ td.diff_header {
   padding: 0.6rem 0.9rem;
   color: #000;
   text-decoration: none;
-  font-weight: 600;
 }
 .masthead .main-navbar ul li:hover a, .masthead .main-navbar ul li:focus a, .masthead .main-navbar ul li.active a {
   border-radius: 0.25rem;
   background-color: #D2DAEA;
   color: #000312;
+}
+.masthead .main-navbar ul li.active a {
+  font-weight: 600;
 }
 .masthead .main-navbar .site-search button {
   display: flex;

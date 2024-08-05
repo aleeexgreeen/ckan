@@ -9,28 +9,27 @@
             <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" />
           </figure>
           {% endblock %}
-          {% block organization_item_header_title %}
-            <h3 class="media-heading">{{ organization.title or organization.name }}</h3>
-          {% endblock %}
-          <p>
-            {% if organization.package_count %}
-              {{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}
-            {% elif organization.package_count == 0 %}
-              {{ _('0 Datasets') }}
-            {% endif %}
-          </p>
+          <div class="module-heading-item">
+            <div class="module-heading-content">
+              {% block organization_item_header_title %}
+                <h3 class="media-heading">{{ organization.title or organization.name }}</h3>
+              {% endblock %}
+              {% block organization_item_header_datasets %}
+                <p>
+                  {% if organization.package_count %}
+                    {{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}
+                  {% elif organization.package_count == 0 %}
+                    {{ _('0 Datasets') }}
+                  {% endif %}
+                </p>
+              {% endblock %}
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <path d="M9.16675 22H34.8334M34.8334 22L22.0001 9.16663M34.8334 22L22.0001 34.8333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </header>
       {% endblock %}
-      {# {% block organization_item_header_description %}
-        {% if organization.description %}
-            <p>{{ h.markdown_extract(organization.description, 120)|urlize }}</p>
-        {% endif %}
-      {% endblock %}
-      {% block organization_item_content %}
-        {% set list_class = "list-unstyled dataset-list" %}
-        {% set item_class = "dataset-item module-content" %}
-        {% snippet 'snippets/package_list.html', packages=organization.packages, list_class=list_class, item_class=item_class %}
-      {% endblock %} #}
     </a>
   </section>
 {% endblock %}

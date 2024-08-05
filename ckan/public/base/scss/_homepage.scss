@@ -21,6 +21,12 @@
         font-size: 60px;
         font-weight: 700;
     }
+    h2 {
+        color: #0A1D5E;
+    }
+    h3, h3 a{
+        color: $black;
+    }
     .module-search {
         color: $mastheadTextColor;
         display: flex;
@@ -96,23 +102,6 @@
             margin-bottom: $spacer-4;
             list-style: none;
             padding-left: unset;
-            .dataset-item {
-                padding: 16px;
-                background-color: $gray-100;
-                margin-bottom: 0;
-                border-radius: 4px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                align-self: stretch;
-            }
-            .dataset-card-title {
-                margin-bottom: 0;
-            }
-            .dataset-card-subtitle {
-                color: #667085;
-                font-weight: 500;
-            }
         }
         
     }
