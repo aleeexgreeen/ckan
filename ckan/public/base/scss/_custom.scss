@@ -1,6 +1,12 @@
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     margin-top: 0;
     margin-bottom: 0.5rem;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
     font-weight: 600;
 }
 
@@ -62,4 +68,8 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .form-group .controls .icon + .form-control {
     width: 100%;
     padding-left: 34px;
+}
+.bg-dust-red {
+    background-color: $dust-red;
+    color: $white;
 }

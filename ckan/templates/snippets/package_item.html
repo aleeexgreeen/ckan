@@ -19,18 +19,17 @@ Example:
       <div class="dataset-content">
         {% block heading %}
           <h3 class="dataset-card-title">
+            {% block heading_title %}
+              <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}">
+                {{title|truncate(80)}}
+              </a>
+            {% endblock %}
             {% block heading_private %}
               {% if package.private %}
-                <span class="dataset-private badge bg-secondary">
-                    <i class="fa fa-lock"></i>
+                <span class="dataset-private badge bg-dust-red pull-right">
                     {{ _('Private') }}
                 </span>
               {% endif %}
-            {% endblock %}
-            {% block heading_title %}
-    <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}">
-      {{title|truncate(80)}}
-    </a>
             {% endblock %}
             {% block heading_meta %}
               {% if package.get('state', '').startswith('draft') %}

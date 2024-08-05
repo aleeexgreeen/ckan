@@ -1,7 +1,5 @@
 .dataset-item {
-    border-bottom: 1px dotted $genericBorderColor;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    border-bottom: 1px solid $genericBorderColor;
 }
 @include media-breakpoint-down(sm){
     .dataset-item {
@@ -36,11 +34,6 @@
 }
 
 .dataset-private {
-    margin-right: 10px;
-    text-transform: uppercase;
-    .icon-lock {
-        width: 9px;
-    }
     &.pull-right {
         margin-right: 0;
     }
@@ -54,6 +47,9 @@
     display: inline;
 }
 
+.dataset-content {
+    width: 100%;
+}
 
 // Resource List
 .resource-list {
