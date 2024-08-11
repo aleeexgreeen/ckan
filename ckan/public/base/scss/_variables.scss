@@ -49,9 +49,9 @@ $navItemActiveArrowSize: $spacer-1;
 $pillTextColor: $navItemActiveTextColor;
 $pillBackgroundColor: darken($navItemActiveBackgroundColor, 10%);
 
-$footerBackgroundColor: #030d38; //brand-700
+$footerBackgroundColor: $brand-700;
 $footerTextColor: $white;
-$footerLinkColor: #6d83ab; //branc-200
+$footerLinkColor: $brand-200;
 
 $inputColor: $black;
 $inputBackground: $body-bg;

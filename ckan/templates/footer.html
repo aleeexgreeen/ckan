@@ -3,10 +3,17 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 footer-links">
+        <div class="col-md-6">
+        {% block footer_logo %}
+          <a class="logo" href="{{ h.url_for('home.index') }}">
+            <img src="{{ h.url_for_static('/base/images/ckan-logo-white.png') }}" alt="{{ g.site_title }}"/>
+          </a>
+        {% endblock footer_logo %}
         <p>The open-source data portal software that powers government and civic data platforms worldwide</p>
         {% block footer_attribution %}
           <p>{% trans %}Powered by <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}<a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></p>
         {% endblock %}
+        </div>
       </div>
       {% block footer_nav %}
         <div class="col-md-2 attribution">

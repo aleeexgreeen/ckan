@@ -5,14 +5,21 @@
 {% block main_content %}
   <div class="row login_wrapper" role="main">
     <div>
+      <div class="heading_container col-md-6">
+        {% block logo %}
+          <img class="d-none d-md-block" src="{{ h.url_for_static('/base/images/ckan-logo-boat.png') }}" alt="{{ g.site_title }}"/>
+        {% endblock %}
+        <h1 class="page-heading">
+          {% block page_heading %}{{ _('Login') }}{% endblock %}
+        </h1>
+      </div>
       {% block flash %}
-        <div class="flash-messages col-md-6 pull-right">
+        <div class="flash-messages col-md-6">
           {% block flash_inner %}
             {{ super() }}
           {% endblock flash_inner %}
         </div>
       {% endblock flash %}
-      <h1 class="page-heading col-md-6">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
     </div>
     <div class="col-md-6 login_content">
       {% block secondary %}

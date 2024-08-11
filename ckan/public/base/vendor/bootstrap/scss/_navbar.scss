@@ -169,6 +169,7 @@
         .navbar-nav {
           flex-direction: row;
           gap: 24px;
+          justify-content: center;
 
           .dropdown-menu {
             position: absolute;
