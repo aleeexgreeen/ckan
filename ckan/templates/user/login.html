@@ -1,67 +1,66 @@
 {% extends "page.html" %}
 
 {% block subtitle %}{{ _('Login') }}{% endblock %}
-{% block content %}
-  <div class="login_container">
-    <div id="content" class="container">
-      {% block main_content %}
-        <div class="row login_wrapper" role="main">
-          <div>
-            {% block flash %}
-              <div class="flash-messages col-md-6 pull-right">
-                {% block flash_inner %}
-                  {{ super() }}
-                {% endblock flash_inner %}
-              </div>
-            {% endblock flash %}
-            <h1 class="page-heading col-md-6">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
-          </div>
-          <div class="col-md-6 login_content">
-            {% block secondary %}
-              <div class="login_options">
-                {% block secondary_content %}
-                  {% if h.check_access('user_create') %}
-                    {% block help_register %}
-                      <section class="module module-narrow module-shallow">
-                        {% block help_register_inner %}
-                          <div>
-                            <h2 class="h5"><a href="{{ h.url_for('user.register') }}">{{ _('Create an Account') }}</a></h2>
-                            <p>{% trans %}Then sign right up, it only takes a minute.{% endtrans %}</p>
-                          </div>
-                        {% endblock %}
-                      </section>
-                    {% endblock %}
-                  {% endif %}
-
-                  {% block help_forgotten %}
-                    <section class="module module-narrow module-shallow">
-                      {% block help_forgotten_inner %}
-                        <div>
-                          <h2 class="h5"><a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a></h2>
-                          <p>{% trans %}No problem, use our password recovery form to reset it.{% endtrans %}</p>
-                        </div>
-                      {% endblock %}
-                    </section>
-                  {% endblock %}
-                {% endblock secondary_content %}
-              </div>
-            {% endblock secondary %}
-          </div>
-          <div class="col-md-6">
-            {% block primary_content %}
-              <section class="module">
-                <div>
-                  {% block primary_content_inner %}
-                    {% block form %}
-                      {% snippet "user/snippets/login_form.html", error_summary=error_summary %}
-                    {% endblock %}
-                  {% endblock primary_content_inner %}
-                </div>
-              </section>
-            {% endblock primary_content %}
-          </div>
+{% block maintag %}<div class="login_container">{% endblock %}
+{% block main_content %}
+  <div class="row login_wrapper" role="main">
+    <div>
+      <div class="heading_container col-md-6">
+        {% block logo %}
+          <img class="d-none d-md-block" src="{{ h.url_for_static('/base/images/ckan-logo-boat.png') }}" alt="{{ g.site_title }}"/>
+        {% endblock %}
+        <h1 class="page-heading">
+          {% block page_heading %}{{ _('Login') }}{% endblock %}
+        </h1>
+      </div>
+      {% block flash %}
+        <div class="flash-messages col-md-6">
+          {% block flash_inner %}
+            {{ super() }}
+          {% endblock flash_inner %}
         </div>
-      {% endblock main_content %}
+      {% endblock flash %}
+    </div>
+    <div class="col-md-6 login_content">
+      {% block secondary %}
+        <div class="login_options">
+          {% block secondary_content %}
+            {% if h.check_access('user_create') %}
+              {% block help_register %}
+                <section class="module module-narrow module-shallow">
+                  {% block help_register_inner %}
+                    <h2 class="h5">
+                      <a href="{{ h.url_for('user.register') }}">{{ _('Create an Account') }}</a>
+                    </h2>
+                    <p>{% trans %}Then sign right up, it only takes a minute.{% endtrans %}</p>
+                  {% endblock help_register_inner %}
+                </section>
+              {% endblock help_register %}
+            {% endif %}
+            {% block help_forgotten %}
+              <section class="module module-narrow module-shallow">
+                {% block help_forgotten_inner %}
+                  <h2 class="h5">
+                    <a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
+                  </h2>
+                  <p>{{ _('No problem, use our password recovery form to reset it.') }}</p>
+                {% endblock help_forgotten_inner %}
+              </section>
+            {% endblock help_forgotten %}
+          {% endblock secondary_content %}
+        </div>
+      {% endblock secondary %}
+    </div>
+    <div class="col-md-6">
+      {% block primary_content %}
+        <section class="module">
+            {% block primary_content_inner %}
+              {% block form %}
+                {% snippet "user/snippets/login_form.html", error_summary=error_summary %}
+              {% endblock %}
+            {% endblock primary_content_inner %}
+        </section>
+      {% endblock primary_content %}
     </div>
   </div>
-{% endblock content %}
+{% endblock main_content %}

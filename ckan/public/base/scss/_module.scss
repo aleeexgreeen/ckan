@@ -13,7 +13,7 @@
 .module-heading {
     @include clearfix;
     margin: 0;
-    padding: math.div($grid-gutter-width,3) $gutterX;
+    padding: $gutterX;
     font-size: $font-size-base;
     line-height: 1.3;
     background-color: $moduleHeadingBackgroundColor;
@@ -23,7 +23,6 @@
 
 .module-content {
     padding: $grid-gutter-width;
-
     .add-to-group{
       .btn-primary{
         margin-bottom: $grid-gutter-width;
@@ -194,4 +193,11 @@
         max-height: 64px;
         vertical-align: middle;
     }
+}
+
+.module-heading-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
 }

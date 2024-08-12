@@ -1,14 +1,21 @@
-{% extends "page.html" %}
+{% extends "user/login.html" %}
 
 {% block subtitle %}{{ _('Logged Out') }}{% endblock %}
 
-{% block primary_content %}
-  <section class="module">
-    <div class="module-content">
-      <h1 class="page-heading">
-      	{% block page_heading %}{{ _('Logged Out') }}{% endblock %}
-      </h1>
-      <p>{% trans %}You are now logged out.{% endtrans %}</p>
+{% block main_content %}
+  <div class="row login_wrapper" role="main">
+    <div>
+      {% block flash %}
+        {{ super() }}
+      {% endblock flash %}
+      <div class="module-content">
+        {% block page_heading_outer %}
+          <h1 class="page-heading">
+            {% block page_heading %}{{ _('Logged Out') }}{% endblock %}
+          </h1>
+        {% endblock %}
+        <p>{% trans %}You are now logged out.{% endtrans %}</p>
+      </div>
     </div>
-  </section>
-{% endblock %}
+  </div>
+{% endblock main_content %}

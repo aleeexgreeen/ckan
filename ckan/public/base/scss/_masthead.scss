@@ -125,9 +125,8 @@ $notificationsBg: #C9403A;
     }
     .main-navbar {
         ul {
-            padding-right: 20px;
             li {
-                margin-right: 2px;;
+                margin-right: 2px;
                 a {
                     padding: ($spacer * .6)  ($spacer * .9);
                     color: $black;
@@ -137,8 +136,14 @@ $notificationsBg: #C9403A;
                 &:focus,
                 &.active {
                     a {
-                        border-radius: $spacer * 0.3;
-                        background-color: darken($mastheadBackgroundColor, 10%);
+                        border-radius: $spacer-1;
+                        background-color: $brand-50;
+                        color: $brand-800;
+                    }
+                }
+                &.active {
+                    a {
+                        font-weight: 600;
                     }
                 }
             }
@@ -152,7 +157,7 @@ $notificationsBg: #C9403A;
         }
     }
     .login-btn {
-        background-color: #0a1d5e;
+        background-color: $brand-600;
         color: $white;
         border-radius: 8px;
         font-weight: 600;
@@ -168,7 +173,7 @@ $notificationsBg: #C9403A;
     .masthead {
         .main-navbar {
             ul {
-                padding: 0;
+                padding-top: 20px;
                 li {
                     padding: 0;
                     a {
@@ -196,6 +201,7 @@ $notificationsBg: #C9403A;
             }
         }
         .login-btn-container {
+            display: flex;
             justify-content: flex-start;
         }
     }
