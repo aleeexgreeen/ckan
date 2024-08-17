@@ -125,7 +125,6 @@ $notificationsBg: #C9403A;
     }
     .main-navbar {
         ul {
-            padding-left: 40px;
             li {
                 margin-right: 2px;
                 a {
@@ -142,6 +141,11 @@ $notificationsBg: #C9403A;
                         color: $brand-800;
                     }
                 }
+                &.active {
+                    a {
+                        font-weight: 600;
+                    }
+                }
             }
         }
         .site-search {
@@ -153,7 +157,7 @@ $notificationsBg: #C9403A;
         }
     }
     .login-btn {
-        background-color: #0a1d5e;
+        background-color: $brand-500;
         color: $white;
         border-radius: 8px;
         font-weight: 600;
@@ -169,7 +173,7 @@ $notificationsBg: #C9403A;
     .masthead {
         .main-navbar {
             ul {
-                padding: 0;
+                padding: 20px 0 0;
                 li {
                     padding: 0;
                     a {

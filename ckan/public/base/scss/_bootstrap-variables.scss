@@ -67,8 +67,20 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
+// brand colors
+$brand-50: #D2DAEA;
+$brand-100: #93a1b8;
+$brand-200: #6d83ab;
+$brand-300: #4c669e;
+$brand-400: #2f4b91;
+$brand-500: #153084;
+$brand-600: #0a1d5e;
+$brand-700: #030d38;
+$brand-800: #000312;
+// brand colors
+
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
+$primary:       $brand-500 !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -99,16 +111,6 @@ $min-contrast-ratio:   4.5 !default;
 $color-contrast-dark:      $black !default;
 $color-contrast-light:     $white !default;
 
-$brand-50: #D2DAEA;
-$brand-100: #b8e6f0;
-$brand-200: #89d5e6;
-$brand-300: #5ac4db;
-$brand-400: #42bcd6;
-$brand-500: #13abcc;
-$brand-600: #119ab8;
-$brand-700: #0f89a3;
-$brand-800: #000312;
-$brand-900: #0a5666;
 
 // fusv-disable
 $blue-100: tint-color($blue, 80%) !default;
