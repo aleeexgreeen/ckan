@@ -12665,10 +12665,6 @@ select[data-module=autocomplete] {
   display: block;
 }
 
-.lang-select-svg {
-  padding: 10px 16px;
-}
-
 .language-toggle.select2-dropdown-open.select2-drop-above .select2-choice {
   all: unset;
   border: 1px solid #5897fb;
@@ -12680,9 +12676,22 @@ select[data-module=autocomplete] {
 }
 
 .select2-dropdown-open.language-toggle .select2-choice .select2-arrow b {
-  background: url("../images/chevron-up.png") no-repeat, #fff;
+  background: url("../images/chevron-up.png") no-repeat;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
+  .select2-container.language-toggle .select2-choice .select2-arrow b {
+    background-image: url("../images/chevron-down.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: auto !important;
+  }
+
+  .select2-dropdown-open.language-toggle .select2-choice .select2-arrow b {
+    background-image: url("../images/chevron-up.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: auto !important;
+  }
+}
 .select2-container.language-toggle .select2-choice > .select2-chosen {
   padding: 10px 16px;
 }
@@ -12699,8 +12708,11 @@ select[data-module=autocomplete] {
 }
 
 .lang-select-container {
-  display: inline-flex;
-  gap: 6px;
+  display: flex;
+  align-items: center;
+}
+.lang-select-container label::after {
+  content: "";
 }
 
 .select2-container-multi {
@@ -14206,6 +14218,9 @@ td.diff_header {
 .site-footer a {
   color: #6d83ab;
 }
+.site-footer .logo img {
+  margin-bottom: 1rem;
+}
 .site-footer .footer-links ul {
   margin: 0;
 }
@@ -14228,6 +14243,9 @@ td.diff_header {
   background-color: #000;
   display: flex;
   padding: 20px;
+}
+.site-footer .copyright .row {
+  align-items: center;
 }
 .site-footer .lang-select .form-group {
   width: 100%;

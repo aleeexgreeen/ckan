@@ -11,6 +11,9 @@
     a {
         color: $footerLinkColor;
     }
+    .logo img {
+        margin-bottom: 1rem;
+    }
     .footer-links {
         ul {
             margin: 0;
@@ -38,6 +41,9 @@
         background-color: $black;
         display: flex;
         padding: 20px;
+        .row {
+            align-items: center;
+        }
     }
     .lang-select {
         .form-group { 
