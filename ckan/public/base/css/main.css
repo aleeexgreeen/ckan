@@ -12022,7 +12022,6 @@ a.tag:hover {
     float: left;
   }
 }
-.module-narrow .nav-item.active > a span,
 .module-narrow .nav-aside li.active a span {
   white-space: nowrap;
 }
@@ -12043,6 +12042,38 @@ a.tag:hover {
   padding: 9px 16px 10px 14px;
   align-items: center;
   gap: 9px;
+}
+.filters .accordion-item {
+  background-color: unset;
+  border: unset;
+  border-radius: 0.5rem;
+}
+.filters .accordion-item:has(.accordion-button:disabled) {
+  background-color: #f2f4f7;
+}
+.filters .filter-svg {
+  fill: none;
+  stroke: #667085;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.filters .accordion-button:not(.collapsed) {
+  box-shadow: none;
+  background-color: #101828;
+  color: #fff;
+}
+.filters .accordion-button:not(.collapsed) .filter-svg {
+  stroke: #fff;
+}
+.filters .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.filters .accordion-button {
+  background-color: #f2f4f7;
+}
+.filters .accordion-button:disabled::after {
+  background-image: none;
 }
 
 .module-narrow .nav-item > a,
@@ -13330,6 +13361,9 @@ td.diff_header {
   background-position: right 1rem top;
   background-size: 16px 16px;
 }
+.search-form .control-order-by:has(.form-select:focus) {
+  box-shadow: 0 0 0 0.25rem rgba(21, 48, 132, 0.25);
+}
 .search-form .filter-list {
   color: #344054;
   line-height: 32px;
@@ -14174,7 +14208,7 @@ td.diff_header {
 }
 @media (max-width: 991.98px) {
   .masthead .main-navbar ul li a:hover, .masthead .main-navbar ul li a:focus {
-    color: #fff;
+    color: #000;
     text-decoration: none;
   }
 }
@@ -14206,6 +14240,9 @@ td.diff_header {
 .site-footer a {
   color: #6d83ab;
 }
+.site-footer a img {
+  margin-bottom: 20px;
+}
 .site-footer .footer-links ul {
   margin: 0;
 }
@@ -14228,6 +14265,10 @@ td.diff_header {
   background-color: #000;
   display: flex;
   padding: 20px;
+}
+.site-footer .copyright .copyright-notice {
+  display: flex;
+  align-items: center;
 }
 .site-footer .lang-select .form-group {
   width: 100%;
