@@ -591,9 +591,7 @@ select[data-module="autocomplete"] {
     width: 99%;
     display: block;
 }
-.lang-select-svg {
-    padding: 10px 16px;
-}
+
 .language-toggle.select2-dropdown-open.select2-drop-above .select2-choice {
     all: unset;
     border: 1px solid #5897fb;
@@ -603,7 +601,20 @@ select[data-module="autocomplete"] {
     background: url('../images/chevron-down.png') no-repeat;
 }
 .select2-dropdown-open.language-toggle .select2-choice .select2-arrow b {
-    background: url('../images/chevron-up.png') no-repeat, #fff;
+    background: url('../images/chevron-up.png') no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
+    .select2-container.language-toggle .select2-choice .select2-arrow b {
+        background-image: url('../images/chevron-down.png') !important;
+        background-repeat: no-repeat !important;
+        background-size: auto !important;
+    }
+    .select2-dropdown-open.language-toggle .select2-choice .select2-arrow b{
+        background-image: url('../images/chevron-up.png') !important;
+        background-repeat: no-repeat !important;
+        background-size: auto !important;
+    }
 }
 .select2-container.language-toggle .select2-choice > .select2-chosen {
     padding: 10px 16px;
@@ -620,8 +631,11 @@ select[data-module="autocomplete"] {
 }
 
 .lang-select-container {
-    display: inline-flex;
-    gap: 6px
+    display: flex;
+    align-items: center;
+    label::after {
+    content: "";
+    }
 }
 
 .select2-container-multi {
