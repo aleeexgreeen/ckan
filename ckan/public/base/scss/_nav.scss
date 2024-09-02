@@ -52,10 +52,10 @@
     .nav-aside li.active a {
         position: relative;
         color: $navItemActiveTextColor;
-        background-color: $primary;
+        background-color: $brand-400;
         &:hover {
             color: $navItemActiveTextColor;
-            background-color: $primary;
+            background-color: $brand-400;
         }
     }
 
@@ -106,7 +106,7 @@
     }
     .accordion-button:not(.collapsed) {
         box-shadow: none;
-        background-color: $gray-900;
+        background-color: $primary;
         color: $white;
         .filter-svg {
             stroke: $white;

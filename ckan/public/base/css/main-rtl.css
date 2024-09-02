@@ -2005,10 +2005,10 @@ progress {
   }
 }
 .table {
-  --bs-table-bg: transparent;
+  --bs-table-bg: #f2f4f7;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: #101828;
-  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-striped-bg: #fff;
   --bs-table-active-color: #101828;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: #101828;
@@ -2022,7 +2022,7 @@ progress {
 .table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
   background-color: var(--bs-table-bg);
-  border-bottom-width: 1px;
+  border-bottom-width: 0;
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
 .table > tbody {
@@ -2032,7 +2032,7 @@ progress {
   vertical-align: bottom;
 }
 .table > :not(:first-child) {
-  border-top: 2px solid currentColor;
+  border-top: 0 solid currentColor;
 }
 
 .caption-top {
@@ -2044,10 +2044,10 @@ progress {
 }
 
 .table-bordered > :not(caption) > * {
-  border-width: 1px 0;
+  border-width: 0 0;
 }
 .table-bordered > :not(caption) > * > * {
-  border-width: 0 1px;
+  border-width: 0 0;
 }
 
 .table-borderless > :not(caption) > * > * {
@@ -11788,12 +11788,7 @@ a.tag:hover {
 
 .media-grid, .module-grid {
   list-style: none;
-  padding-left: 0px;
-  min-height: 205px;
-  padding-top: 0.75rem;
-  background: #f3f4f7 url("../../../base/images/bg.png");
-  border: 1px solid #d0d5dd;
-  border-width: 1px 0;
+  padding: 0;
 }
 .media-grid::after, .module-grid::after {
   display: block;
@@ -12007,12 +12002,12 @@ a.tag:hover {
 .module-narrow .nav-aside li.active a {
   position: relative;
   color: #fff;
-  background-color: #153084;
+  background-color: #2f4b91;
 }
 .module-narrow .nav-item.active > a:hover,
 .module-narrow .nav-aside li.active a:hover {
   color: #fff;
-  background-color: #153084;
+  background-color: #2f4b91;
 }
 .module-narrow .nav-pills > li {
   float: none;
@@ -12060,7 +12055,7 @@ a.tag:hover {
 }
 .filters .accordion-button:not(.collapsed) {
   box-shadow: none;
-  background-color: #101828;
+  background-color: #153084;
   color: #fff;
 }
 .filters .accordion-button:not(.collapsed) .filter-svg {
@@ -13705,6 +13700,11 @@ td.diff_header {
   overflow: hidden;
 }
 
+.show-filters.btn {
+  background-color: #f9fafb;
+  font-weight: 500;
+}
+
 .show-filters.btn,
 .hide-filters {
   display: none;
@@ -13744,9 +13744,8 @@ td.diff_header {
     right: 0;
     bottom: 0;
     z-index: 1000;
-    padding: 10px;
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 10px 0;
+    background-color: #fff;
   }
 
   .js body.filters-modal .secondary .filters {
@@ -13759,6 +13758,7 @@ td.diff_header {
     -moz-border-radius: 4px;
     border-radius: 4px;
     overflow: hidden;
+    padding: 0 10px;
   }
 
   .js .main .secondary .filters > div .module-footer {
