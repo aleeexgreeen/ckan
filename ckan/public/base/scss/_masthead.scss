@@ -136,7 +136,7 @@ $notificationsBg: #C9403A;
                 &:focus,
                 &.active {
                     a {
-                        border-radius: $spacer-1;
+                        border-radius: $border-radius-sm;
                         background-color: $brand-50;
                         color: $brand-800;
                     }
@@ -157,7 +157,7 @@ $notificationsBg: #C9403A;
         }
     }
     .login-btn {
-        background-color: $brand-600;
+        background-color: $brand-500;
         color: $white;
         border-radius: 8px;
         font-weight: 600;
@@ -173,7 +173,7 @@ $notificationsBg: #C9403A;
     .masthead {
         .main-navbar {
             ul {
-                padding-top: 20px;
+                padding: 20px 0 0;
                 li {
                     padding: 0;
                     a {
@@ -181,7 +181,7 @@ $notificationsBg: #C9403A;
                         padding: $nav-link-padding-y $nav-link-padding-x;
                         @include font-size($nav-link-font-size);
                         font-weight: $nav-link-font-weight;
-                        color: $black;
+                        color: $brand-800;
                         text-decoration: if($link-decoration == none, null, none);
                         @include transition($nav-link-transition);
 

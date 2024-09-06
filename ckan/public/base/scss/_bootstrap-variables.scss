@@ -8,15 +8,15 @@
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
 $gray-50: #f9fafb !default;
-$gray-100: #f2f4f7;
-$gray-200: #e4e7ec;
-$gray-300: #d0d5dd;
-$gray-400: #98a2b3;
-$gray-500: #667085;
-$gray-600: #475467;
-$gray-700: #344054;
-$gray-800: #1d2939;
-$gray-900: #101828;
+$gray-100: #f2f4f7 !default;
+$gray-200: #e4e7ec !default;
+$gray-300: #d0d5dd !default;
+$gray-400: #98a2b3 !default;
+$gray-500: #667085 !default;
+$gray-600: #475467 !default;
+$gray-700: #344054 !default;
+$gray-800: #1d2939 !default;
+$gray-900: #101828 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -68,8 +68,20 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
+// brand colors
+$brand-50: #D2DAEA;
+$brand-100: #93a1b8;
+$brand-200: #6d83ab;
+$brand-300: #4c669e;
+$brand-400: #2f4b91;
+$brand-500: #153084;
+$brand-600: #0a1d5e;
+$brand-700: #030d38;
+$brand-800: #000312;
+// brand colors
+
 // scss-docs-start theme-color-variables
-$primary:       #153084 !default;
+$primary:       $brand-500 !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $blue !default;
@@ -99,17 +111,6 @@ $min-contrast-ratio:   4.5 !default;
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $black !default;
 $color-contrast-light:     $white !default;
-
-$brand-50: #D2DAEA;
-$brand-100: #93a1b8;
-$brand-200: #6d83ab;
-$brand-300: #4c669e;
-$brand-400: #2f4b91;
-$brand-500: #153084;
-$brand-600: #0a1d5e;
-$brand-700: #030d38;
-$brand-800: #000312;
-$brand-900: $black;
 
 $dgrey-50: #ebecee;
 $dgrey-100: #d6d9dd;
@@ -553,6 +554,7 @@ $font-size-lg:                $font-size-base * 1.25 !default;
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
+$font-weight-semi-bold:       600 !default;
 $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
@@ -1085,12 +1087,12 @@ $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
 // scss-docs-end navbar-variables
 
 // scss-docs-start navbar-theme-variables
-$navbar-dark-color:                 rgba($white, .55) !default;
+$navbar-dark-color:                 $black !default;
 $navbar-dark-hover-color:           rgba($white, .75) !default;
 $navbar-dark-active-color:          $white !default;
 $navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+$navbar-dark-toggler-border-color:  $white !default;
 
 $navbar-light-color:                $black !default;
 $navbar-light-hover-color:          rgba($black, .7) !default;
