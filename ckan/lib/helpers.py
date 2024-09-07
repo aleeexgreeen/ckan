@@ -770,14 +770,26 @@ def _link_to(text: str, *args: Any, **kwargs: Any) -> Markup:
             text = literal('<i class="fa fa-%s"></i> ' % icon) + text
         return text
 
+    def _link_aria_current(kwargs: Any):
+        ''' Adds aria-current="page" to active navigation menu items '''
+        suppress_active_class = kwargs.pop('suppress_active_class', False)
+        if not suppress_active_class and _link_active(kwargs):
+            aria_current = "page"
+        else:
+            aria_current = None
+        return aria_current
+
     icon = kwargs.pop('icon', None)
     cls = _link_class(kwargs)
     title = kwargs.pop('title', kwargs.pop('title_', None))
+    aria_current = _link_aria_current(kwargs)
+
     return link_to(
         _create_link_text(text, **kwargs),
         url_for(*args, **kwargs),
         cls=cls,
-        title=title
+        title=title,
+        aria_current = aria_current
     )
 
 
@@ -2413,6 +2425,15 @@ def uploads_enabled() -> bool:
         return True
     return False
 
+@core_helper
+def get_recent_datasets(count: int = 8) -> list[dict[str, Any]]:
+    '''Returns a list of recently modified/created datasets
+    '''
+    context: Context = {'ignore_auth': True, 'for_view': True}
+    data_dict={'rows': count,'sort': 'metadata_modified desc'}
+    recently_updated_datasets = logic.get_action('package_search')(context, data_dict)
+    return recently_updated_datasets['results']
+
 
 @core_helper
 def get_featured_organizations(count: int = 1) -> list[dict[str, Any]]:
@@ -2475,6 +2496,16 @@ def featured_group_org(items: list[str], get_action: str, list_action: str,
             break
 
     return groups_data
+
+@core_helper
+def get_site_statistics() -> dict[str, int]:
+    stats = {}
+    stats['dataset_count'] = logic.get_action('package_search')(
+        {}, {"rows": 1})['count']
+    stats['group_count'] = len(logic.get_action('group_list')({}, {}))
+    stats['organization_count'] = len(
+        logic.get_action('organization_list')({}, {}))
+    return stats
 
 
 _RESOURCE_FORMATS: dict[str, Any] = {}

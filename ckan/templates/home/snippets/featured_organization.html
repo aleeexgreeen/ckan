@@ -1,7 +1,14 @@
-{% set organizations = h.get_featured_organizations() %}
+{% set organizations = h.get_featured_organizations(count=6) %}
 
+<h2>Organizations</h2>
+<p> Browse organizations involved in dataset distribution</p>
+<div class="featured-groups">
 {% for organization in organizations %}
-  <div class="box">
+  <div class="org-cards">
     {% snippet 'snippets/organization_item.html', organization=organization %}
   </div>
 {% endfor %}
+</div>
+<div>
+  <a class="btn btn-light pull-right" href="{{ h.url_for('organization.index') }}">{{ _('View all organizations') }}</a>
+</div>

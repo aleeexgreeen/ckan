@@ -1,5 +1,6 @@
 .input-group {
-  .form-control {
+  .form-control,
+  > .form-control:focus {
     z-index: 0;
   }
 }
@@ -8,6 +9,15 @@
   &:last-child {
     > .btn {
       z-index: 0;
+    }
+  }
+}
+
+.input-group {
+  &:not(.has-validation) {
+    > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
+    > .dropdown-toggle:nth-last-child(n + 3) {
+      @include border-end-radius($input-border-radius-lg);
     }
   }
 }
