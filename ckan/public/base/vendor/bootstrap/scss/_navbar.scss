@@ -75,6 +75,7 @@
 .navbar-nav {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 
@@ -109,6 +110,7 @@
 // on the `.navbar` parent.
 .navbar-collapse {
   flex-basis: 100%;
+  flex-grow: 1;
   // For always expanded or extra full navbars, ensure content aligns itself
   // properly vertically. Can be easily overridden with flex utilities.
   align-items: center;
@@ -164,12 +166,10 @@
     &#{$infix} {
       @include media-breakpoint-up($next) {
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: flex-start;
 
         .navbar-nav {
           flex-direction: row;
-          gap: 24px;
-          justify-content: center;
 
           .dropdown-menu {
             position: absolute;
@@ -266,6 +266,7 @@
 
   .navbar-toggler {
     color: $navbar-light-color;
+    border-color: $navbar-light-toggler-border-color;
   }
 
   .navbar-toggler-icon {
@@ -316,6 +317,7 @@
 
   .navbar-toggler {
     color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
   }
 
   .navbar-toggler-icon {

@@ -100,11 +100,21 @@ class SysadminFactory(factories.Sysadmin):
     pass
 
 
+class SysadminWithTokenFactory(factories.SysadminWithToken):
+    pass
+
+
+class UserWithTokenFactory(factories.UserWithToken):
+    pass
+
+
 class OrganizationFactory(factories.Organization):
     pass
 
 
 register(SysadminFactory, "sysadmin")
+register(SysadminWithTokenFactory, "sysadmin_with_token")
+register(UserWithTokenFactory, "user_with_token")
 register(OrganizationFactory, "organization")
 
 
@@ -216,6 +226,23 @@ def reset_index():
     return search.clear_all
 
 
+def _empty_queues():
+
+    conn = redis.connect_to_redis()
+    for queue in rq.Queue.all(connection=conn):
+        queue.empty()
+        queue.delete()
+
+
+@pytest.fixture(scope=u"session")
+def reset_queues():
+    """Callable for emptying and deleting the queues.
+
+    If possible use the ``clean_queues`` fixture instead.
+    """
+    return _empty_queues
+
+
 @pytest.fixture(scope="session")
 def reset_redis():
     """Callable for removing all keys from Redis.
@@ -305,6 +332,28 @@ def clean_db(reset_db):
 
     """
     reset_db()
+
+
+@pytest.fixture
+def clean_queues(reset_queues):
+    """Empties and deleted all queues.
+
+    This can be used either for all tests in a class::
+
+        @pytest.mark.usefixtures("clean_queues")
+        class TestExample(object):
+
+            def test_example(self):
+
+    or for a single test::
+
+        class TestExample(object):
+
+            @pytest.mark.usefixtures("clean_queues")
+            def test_example(self):
+
+    """
+    reset_queues()
 
 
 @pytest.fixture(scope="session")
