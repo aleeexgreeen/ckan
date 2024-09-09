@@ -12957,7 +12957,23 @@ td.diff_header {
   border-bottom: none;
 }
 
+.organization-group {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(3, auto);
+  column-gap: 12px;
+  row-gap: 12px;
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 767.98px) {
+  .organization-group {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 12px;
+    margin-bottom: 2rem;
+  }
   .homepage .hero .container .row {
     padding: 32px 12px;
   }
@@ -13006,6 +13022,20 @@ td.diff_header {
     margin-bottom: 2rem;
   }
 }
+.org-cards {
+  list-style: none;
+}
+.org-cards .module-heading {
+  display: grid;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+.organization-group {
+  padding-left: 0;
+}
+
 .account-masthead {
   min-height: 30px;
   color: #000;
