@@ -64,7 +64,7 @@ Dictionary with search facets
 			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
 				{% set active_items = items|selectattr('active')|list|length >= 1 %}
 			    {% if items %}
-				<nav id="{{ title }}" class="accordion-collapse collapse {% if active_items -%}show{%- endif -%}" aria-label="{{ title }}">
+				<nav id="{{ title }}" class="accordion-collapse collapse {% if active_items -%}show{%- endif -%}" aria-label="{{ _('Filter by: {title}').format(title=title) }}">
 				    <ul class="list-unstyled nav nav-simple nav-facet">
 					{% for item in items %}
 					    {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
@@ -73,7 +73,7 @@ Dictionary with search facets
 					    {% set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
 						{% set stroke_color = "white" if item.active else "black" %}
 					    <li class="nav-item {% if item.active %} active{% endif %}">
-						<a href="{{ href }}" title="{{ label if label != label_truncated else '' }}">
+						<a href="{{ href }}" aria-label="{{ _('Search datasets by {name}: {label}').format(name=name, label=label_truncated) }}" {% if label != label_truncated %} data-bs-title="{{ label }}" data-bs-toggle="tooltip" {% endif %}>
 						    <span class="item-label">{{ label_truncated }}</span>
 							<span class="item-count-span">
 								<span class="item-count badge">{{ count }}</span>

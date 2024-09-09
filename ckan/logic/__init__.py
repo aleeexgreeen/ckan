@@ -138,6 +138,8 @@ class ValidationError(ActionError):
                 elif key == 'tags':
                     assert isinstance(error, list)
                     summary[_('Tags')] = error[0]
+                elif isinstance(error, str):
+                    summary[_(prettify(key))] = error
                 else:
                     assert isinstance(error, list)
                     summary[_(prettify(key))] = error[0]
@@ -553,6 +555,7 @@ def get_action(action: str) -> Action:
     # wrap the functions
     for action_name, _action in _actions.items():
         def make_wrapped(_action: Action, action_name: str):
+            @functools.wraps(_action)
             def wrapped(context: Optional[Context] = None,
                         data_dict: Optional[DataDict] = None, **kw: Any):
                 if kw:
@@ -598,8 +601,6 @@ def get_action(action: str) -> Action:
             return wrapped
 
         fn = make_wrapped(_action, action_name)
-        # we need to mirror the docstring
-        fn.__doc__ = _action.__doc__
         # we need to retain the side effect free behaviour
         if getattr(_action, 'side_effect_free', False):
             # type_ignore_reason: custom attribute
@@ -663,8 +664,23 @@ def get_or_bust(
 
 def validate(schema_func: Callable[[], Schema],
              can_skip_validator: bool = False) -> Callable[[Action], Action]:
-    ''' A decorator that validates an action function against a given schema
-    '''
+    """A decorator that validates an action function against a given schema.
+
+    Example::
+
+        def schema_func():
+            return {
+                "a": [get_validator("int_validator")],
+                "__extras": [get_validator("ignore")]
+            }
+
+        @validate_action_data(schema_function)
+        def my_action(context, data_dict):
+            return data_dict
+
+        data = {"a": "1", "b": "2"}
+        assert my_action({}, data) == {"a": 1}
+    """
     def action_decorator(action: Action) -> Action:
         @functools.wraps(action)
         def wrapper(context: Context, data_dict: DataDict):
