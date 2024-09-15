@@ -38,16 +38,16 @@ Dictionary with search facets
 #}
 {% block facet_list %}
     {% set hide_empty = hide_empty or false %}
-    {% with items = items or h.get_facet_items_dict(name, search_facets) %}
+    {% with items = items or h.get_facet_items_dict(name, search_facets, exclude_active=true) %}
 	{% if items or not hide_empty %}
 	    {% block facet_list_item %}
 		<section class="module module-narrow module-shallow accordion">
 			<div class="accordion-item">
 		    {% block facet_list_heading %}
 			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
-				{% set active_items = items|selectattr('active')|list|length >= 1 %}
+				{% set active_facet = h.currently_active_facet(name) %}
 				<h2 class="accordion-header">
-					<button class="module-heading accordion-button {% if not active_items -%}collapsed{%- endif -%}"
+					<button class="module-heading accordion-button {% if not active_facet -%}collapsed{%- endif -%}"
 						type="button"
 						data-bs-toggle="collapse"
 						data-bs-target="#{{ title }}"
@@ -62,26 +62,22 @@ Dictionary with search facets
 		    {% endblock %}
 		    {% block facet_list_items %}
 			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
-				{% set active_items = items|selectattr('active')|list|length >= 1 %}
+			{% set active_facet = h.currently_active_facet(name) %}
 			    {% if items %}
-				<nav id="{{ title }}" class="accordion-collapse collapse {% if active_items -%}show{%- endif -%}" aria-label="{{ _('Filter by: {title}').format(title=title) }}">
+				<nav id="{{ title }}" class="accordion-collapse collapse {% if active_facet -%}show{%- endif -%}" aria-label="{{ _('Filter by: {title}').format(title=title) }}">
 				    <ul class="list-unstyled nav nav-simple nav-facet">
 					{% for item in items %}
 					    {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
 					    {% set label = label_function(item) if label_function else item.display_name %}
 					    {% set label_truncated = label|truncate(22) if not label_function else label %}
 					    {% set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
-						{% set stroke_color = "white" if item.active else "black" %}
+						{% set state = "close" if item.active else "open" %}
 					    <li class="nav-item {% if item.active %} active{% endif %}">
 						<a href="{{ href }}" aria-label="{{ _('Search datasets by {name}: {label}').format(name=name, label=label_truncated) }}" {% if label != label_truncated %} data-bs-title="{{ label }}" data-bs-toggle="tooltip" {% endif %}>
 						    <span class="item-label">{{ label_truncated }}</span>
 							<span class="item-count-span">
 								<span class="item-count badge">{{ count }}</span>
-								<span class="facet-close">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-										<path d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="{{ stroke_color }}" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-								</span>
+								<span class="facet-{{ state }}"></span>
 							</span>
 						</a>
 					    </li>
