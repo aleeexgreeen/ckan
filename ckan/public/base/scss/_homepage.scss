@@ -109,8 +109,26 @@
         
     }
 }
+.organization-group {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+    margin-bottom: 2rem;
+    list-style: none;
+}
+
+.organization-group.groups {
+    grid-template-columns: repeat(3, 1fr);
+}
 
 @include media-breakpoint-down(md){
+    .organization-group, .organization-group.groups {
+        margin-bottom: $spacer-4;
+        grid-template-columns: none;
+    }
     .homepage {
         .hero {
             .container {
@@ -152,6 +170,7 @@
                 grid-auto-flow: row;
                 row-gap: 12px;
                 margin-bottom: $spacer-4;
+                grid-template-columns: none;
             }
             .card {
                 margin-top: $spacer * 1;
@@ -167,3 +186,31 @@
         }
     }
 }
+.org-cards {
+    list-style: none;
+    .module-heading {
+        display: grid;
+        background-color: $white;
+        border: none;
+        border-radius: 6px;
+    }
+}
+
+.group-card {
+    list-style: none;
+    background-color: $white;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    a {
+        display: grid;
+    }
+    h3 {
+        margin: 16px 0;
+    }
+}
+
+.organization-group {
+    padding-left: 0;
+}
+

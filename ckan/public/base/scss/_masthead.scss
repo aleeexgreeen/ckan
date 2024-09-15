@@ -156,16 +156,13 @@ $notificationsBg: #C9403A;
             }
         }
     }
-    .login-btn {
-        background-color: $brand-500;
-        color: $white;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 16px;
-    }
     .login-btn-container {
         display: flex;
         justify-content: flex-end;
+        .btn {
+            background-color: $brand-500;
+            color: $white;
+        }
     }
 }
 

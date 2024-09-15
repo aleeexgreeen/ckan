@@ -6,5 +6,5 @@
 
 .alert {
     border: unset;
-    border-top: map-get($map: $border-widths, $key: "4") solid $red-700;
+    border-top: map-get($map: $border-widths, $key: "4") solid;
 }

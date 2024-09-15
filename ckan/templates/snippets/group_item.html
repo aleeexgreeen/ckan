@@ -1,6 +1,6 @@
 {% set url=h.url_for(group.type ~ '.read', id=group.name) %}
 {% block group_item %}
-  <section class="group-list module module-narrow module-shallow">
+  <section class="group-list module module-narrow">
     <a href="{{ url }}">
       {% block group_item_header %}
         <header class="module-heading">

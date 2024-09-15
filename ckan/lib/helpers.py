@@ -1136,6 +1136,15 @@ def get_facet_items_dict(
 
 
 @core_helper
+def currently_active_facet(facet: str) -> bool:
+    params_items = request.args.keys()
+    if facet in params_items:
+        return True
+    else:
+        return False
+
+
+@core_helper
 def has_more_facets(facet: str,
                     search_facets: dict[str, dict[str, Any]],
                     limit: Optional[int] = None,
