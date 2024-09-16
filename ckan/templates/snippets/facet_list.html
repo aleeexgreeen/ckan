@@ -62,7 +62,7 @@ Dictionary with search facets
 		    {% endblock %}
 		    {% block facet_list_items %}
 			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
-			{% set active_facet = h.currently_active_facet(name) %}
+				{% set active_facet = h.currently_active_facet(name) %}
 			    {% if items %}
 				<nav id="{{ title }}" class="accordion-collapse collapse {% if active_facet -%}show{%- endif -%}" aria-label="{{ _('Filter by: {title}').format(title=title) }}">
 				    <ul class="list-unstyled nav nav-simple nav-facet">
@@ -71,13 +71,12 @@ Dictionary with search facets
 					    {% set label = label_function(item) if label_function else item.display_name %}
 					    {% set label_truncated = label|truncate(22) if not label_function else label %}
 					    {% set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
-						{% set state = "close" if item.active else "open" %}
 					    <li class="nav-item {% if item.active %} active{% endif %}">
 						<a href="{{ href }}" aria-label="{{ _('Search datasets by {name}: {label}').format(name=name, label=label_truncated) }}" {% if label != label_truncated %} data-bs-title="{{ label }}" data-bs-toggle="tooltip" {% endif %}>
 						    <span class="item-label">{{ label_truncated }}</span>
 							<span class="item-count-span">
 								<span class="item-count badge">{{ count }}</span>
-								<span class="facet-{{ state }}"></span>
+								<span class="item-state"></span>
 							</span>
 						</a>
 					    </li>

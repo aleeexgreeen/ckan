@@ -19,33 +19,53 @@
     .nav-item>a {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     .nav-item>a,
     .nav-aside li a {
-    text-decoration: none;;
-    color: $navLinkColor;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    padding: 10px ($gutterX);
-    border-radius: .5rem;
-    &:hover {
-        text-decoration: none;
-        background-color: #f8f9fa;
+        text-decoration: none;;
+        color: $navLinkColor;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        padding: 10px ($gutterX);
+        border-radius: .5rem;
+        &:hover {
+            text-decoration: none;
+            background-color: #f8f9fa;
+        }
+        &:focus{
+            background-color: $gray-300;
+        }
+        .badge {
+            background-color: $emptyTextColor;
+            border-radius: 6px;
+            padding: 4px 6px;
+            color: white;
+            min-width: 2rem;
+        }
+        .item-label {
+            width: 70%;
+        }
+        .item-state {
+            float: right;
+            position: relative;
+            transform: translateY(0);
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+        .item-count-span {
+            display: flex;
+            align-self: center;
+        }
     }
-    &:focus{
-        background-color: $gray-300;
-    }
-    .badge {
-        background-color: $emptyTextColor;
-        border-radius: 6px;
-        padding: 4px 6px;
-        color: white;
-        min-width: 2rem;
-    }
-}
     .nav-item.active,
     .nav-aside li.active {
         background-color: $primary;
+        .item-state {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
     }
 
     .nav-item.active>a,
@@ -166,26 +186,7 @@
     }
 }
 
-.nav-item{
-    .facet-close, .facet-open {
-        float: right;
-		position: relative;
-		transform: translateY(0);
-		left: 10px;
-        width: 24px;
-        height: 24px;
-    }
-    .facet-close {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    }
-    .facet-open {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    }
-    .item-count-span {
-        display: flex;
-        align-self: center;
-    }
-}
+
 @include media-breakpoint-up(md) {
     .masthead .main-navbar ul {
         padding-left: 0;

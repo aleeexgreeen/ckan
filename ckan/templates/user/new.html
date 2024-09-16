@@ -2,7 +2,7 @@
 
 {% block subtitle %}{{ _('Register') }}{% endblock %}
 
-{% block page_heading %}{{ _('Register for an Account') }}{% endblock %}\
+{% block page_heading %}{{ _('Register for an Account') }}{% endblock %}
 
 {% block form %}
   {{ form | safe }}
@@ -10,12 +10,11 @@
 
 {% block secondary_content %}
   {% block help %}
-    <section class="module module-narrow module-shallow">
-      {% block help_inner %}
-        <h2 class="h5">
-          <a href="{{ h.url_for('user.login') }}">{{ _('Login') }}</a>
-        </h2>
-        <p>{{ _('Create datasets, groups and other exciting things') }}</p>
-      {% endblock help_inner %}
+    {% block help_inner %}
+      <h2 class="h5">
+        <a href="{{ h.url_for('user.login') }}">{{ _('Login') }}</a>
+      </h2>
+      <p>{{ _('Create datasets, groups and other exciting things') }}</p>
+    {% endblock help_inner %}
   {% endblock help %}
 {% endblock secondary_content %}

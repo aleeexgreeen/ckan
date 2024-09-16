@@ -10519,7 +10519,6 @@ a.tag:hover {
 .module-footer {
   padding: 7px 2rem 7px;
   margin: 0;
-  border-top: 1px dotted #e4e7ec;
 }
 
 .module .read-more {
@@ -10856,6 +10855,7 @@ a.tag:hover {
 .module-narrow .nav-item > a {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .module-narrow .nav-item > a,
 .module-narrow .nav-aside li a {
@@ -10883,9 +10883,32 @@ a.tag:hover {
   color: white;
   min-width: 2rem;
 }
+.module-narrow .nav-item > a .item-label,
+.module-narrow .nav-aside li a .item-label {
+  width: 70%;
+}
+.module-narrow .nav-item > a .item-state,
+.module-narrow .nav-aside li a .item-state {
+  float: right;
+  position: relative;
+  transform: translateY(0);
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.module-narrow .nav-item > a .item-count-span,
+.module-narrow .nav-aside li a .item-count-span {
+  display: flex;
+  align-self: center;
+}
 .module-narrow .nav-item.active,
 .module-narrow .nav-aside li.active {
   background-color: #153084;
+}
+.module-narrow .nav-item.active .item-state,
+.module-narrow .nav-aside li.active .item-state {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 .module-narrow .nav-item.active > a,
 .module-narrow .nav-aside li.active a {
@@ -10999,25 +11022,6 @@ a.tag:hover {
   margin-right: 3px;
   margin-bottom: 3px;
   border-radius: 100px;
-}
-
-.nav-item .facet-close, .nav-item .facet-open {
-  float: right;
-  position: relative;
-  transform: translateY(0);
-  left: 10px;
-  width: 24px;
-  height: 24px;
-}
-.nav-item .facet-close {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-.nav-item .facet-open {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-.nav-item .item-count-span {
-  display: flex;
-  align-self: center;
 }
 
 @media (min-width: 768px) {
@@ -12928,22 +12932,12 @@ td.diff_header {
 }
 .homepage .module-feeds .featured-groups {
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
   grid-auto-columns: minmax(0, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 12px;
   row-gap: 12px;
   margin-bottom: 2rem;
-}
-.homepage .module-feeds .featured-groups .group-cards.module-heading {
-  border-radius: 12px;
-  row-gap: 1rem;
-}
-.homepage .module-feeds .featured-groups .module-heading {
-  display: grid;
-  background-color: #fff;
-  border: none;
-  border-radius: 6px;
 }
 .homepage .module-feeds .recent-packages {
   display: grid;
@@ -13011,11 +13005,10 @@ td.diff_header {
     font-weight: 400;
   }
   .homepage .module-feeds .featured-groups {
-    display: grid;
-    grid-auto-flow: row;
-    row-gap: 12px;
-    margin-bottom: 2rem;
     grid-template-columns: none;
+  }
+  .homepage .module-feeds .featured-groups .group-card h3, .homepage .module-feeds .featured-groups .group-card .h3 {
+    margin: 0;
   }
   .homepage .module-feeds .card {
     margin-top: 1rem;
