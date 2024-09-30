@@ -13233,12 +13233,14 @@ td.diff_header {
 }
 .in-progress .in-progress-content {
   display: grid;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .in-progress .in-progress-content span.h4 {
   color: #fff;
 }
 .in-progress .feedback-button {
-  padding-top: 12px;
+  align-content: center;
 }
 
 .site-footer {

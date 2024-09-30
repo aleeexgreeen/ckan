@@ -212,11 +212,13 @@ $notificationsBg: #C9403A;
     }
     .in-progress-content {
         display: grid;
+        padding-top: 12px;
+        padding-bottom: 12px;
         span.h4 {
             color: $white;
         }
     }
     .feedback-button {
-        padding-top: 12px;
+        align-content: center;
     }
 }
