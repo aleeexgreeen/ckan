@@ -8,3 +8,17 @@
     border: unset;
     border-top: map-get($map: $border-widths, $key: "4") solid;
 }
+
+.in-progress {
+    background-color: $brand-800;
+    color: $white;
+    p {
+        padding-top: 1rem;
+    }
+    .in-progress-content {
+        display: grid;
+    }
+    .feedback-button {
+        align-content: center;
+    }
+}
