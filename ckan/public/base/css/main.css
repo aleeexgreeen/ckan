@@ -13224,6 +13224,23 @@ td.diff_header {
     justify-content: flex-start;
   }
 }
+.in-progress {
+  background-color: #030d38;
+  color: #fff;
+}
+.in-progress p {
+  padding: 1rem 0;
+}
+.in-progress .in-progress-content {
+  display: grid;
+}
+.in-progress .in-progress-content span.h4 {
+  color: #fff;
+}
+.in-progress .feedback-button {
+  padding-top: 12px;
+}
+
 .site-footer {
   background: #030d38;
   padding-top: 4rem;
@@ -13563,20 +13580,6 @@ td.diff_header {
 .alert {
   border: unset;
   border-top: solid;
-}
-
-.in-progress {
-  background-color: #000312;
-  color: #fff;
-}
-.in-progress p {
-  padding-top: 1rem;
-}
-.in-progress .in-progress-content {
-  display: grid;
-}
-.in-progress .feedback-button {
-  align-content: center;
 }
 
 .input-group .form-control,

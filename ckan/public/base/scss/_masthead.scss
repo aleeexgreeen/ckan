@@ -203,3 +203,20 @@ $notificationsBg: #C9403A;
         }
     }
 }
+
+.in-progress {
+    background-color: $brand-700;
+    color: $white;
+    p {
+        padding: 1rem 0;
+    }
+    .in-progress-content {
+        display: grid;
+        span.h4 {
+            color: $white;
+        }
+    }
+    .feedback-button {
+        padding-top: 12px;
+    }
+}
