@@ -75,3 +75,12 @@ h2,
     display: grid;
     grid-gap: 20px;
 }
+
+@include media-breakpoint-down(sm){
+    .pre-primary.page-heading {
+        text-align: center;
+        h1 {
+            color: $brand-500;
+        }
+    }
+}

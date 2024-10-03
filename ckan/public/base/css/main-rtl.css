@@ -10416,6 +10416,14 @@ h2,
   grid-gap: 20px;
 }
 
+@media (max-width: 575.98px) {
+  .pre-primary.page-heading {
+    text-align: center;
+  }
+  .pre-primary.page-heading h1, .pre-primary.page-heading .h1 {
+    color: #153084;
+  }
+}
 .tag {
   display: inline-block;
   margin-bottom: 4px;
@@ -13167,6 +13175,7 @@ td.diff_header {
   padding: 0.6rem 0.9rem;
   color: #000;
   text-decoration: none;
+  margin-bottom: 0.25rem;
 }
 .masthead .main-navbar ul li:hover a, .masthead .main-navbar ul li:focus a, .masthead .main-navbar ul li.active a {
   border-radius: 0.25rem;
@@ -13230,6 +13239,7 @@ td.diff_header {
 }
 .in-progress p {
   padding: 1rem 0;
+  margin-bottom: 0;
 }
 .in-progress .in-progress-content {
   display: grid;
@@ -13245,7 +13255,7 @@ td.diff_header {
 
 .site-footer {
   background: #030d38;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 .site-footer span, .site-footer p, .site-footer h2, .site-footer .h2 {
   color: #fff;
