@@ -6,7 +6,7 @@
 
 {% block primary_content_inner %}
   {% block form %}
-    <form action="" method="post">
+    <form action="" class="reset_form" method="post">
       {{ h.csrf_input() }}
       <div class="form-group">
         <label for="field-username">{{ _('Email or username') }}</label>

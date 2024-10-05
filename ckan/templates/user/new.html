@@ -7,14 +7,3 @@
 {% block form %}
   {{ form | safe }}
 {% endblock form %}
-
-{% block secondary_content %}
-  {% block help %}
-    {% block help_inner %}
-      <h2 class="h5">
-        <a href="{{ h.url_for('user.login') }}">{{ _('Login') }}</a>
-      </h2>
-      <p>{{ _('Create datasets, groups and other exciting things') }}</p>
-    {% endblock help_inner %}
-  {% endblock help %}
-{% endblock secondary_content %}

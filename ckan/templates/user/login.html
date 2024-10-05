@@ -4,44 +4,32 @@
 {% block maintag %}<div class="login_container">{% endblock %}
 {% block main_content %}
   <div class="row login_wrapper" role="main">
-    <div class="heading_container col-md-6">
-      {% block logo %}
-        <img class="d-none d-md-block" src="{{ h.url_for_static('/base/images/ckan-logo-boat.png') }}" alt="" role="presentation"/>
-      {% endblock %}
-      <h1 class="page-heading">
-        {% block page_heading %}{{ _('Login') }}{% endblock %}
-      </h1>
-    </div>
+    <div>
     {% block flash %}
-      <div class="flash-messages col-md-6">
+      <div class="flash-messages pull-right col-md-6">
         {% block flash_inner %}
           {{ super() }}
         {% endblock flash_inner %}
       </div>
+    </div>
     {% endblock flash %}
     <div class="col-md-6 login_content">
       {% block secondary %}
         <div class="login_aside">
+          <div class="heading_container">
+            {% block logo %}
+              <img class="d-none d-md-block" src="{{ h.url_for_static('/base/images/ckan-logo-boat.png') }}" alt="" role="presentation"/>
+            {% endblock %}
+            <h1 class="page-heading">
+              {% block page_heading %}{{ _('Login') }}{% endblock %}
+            </h1>
+          </div>
           {% block secondary_content %}
-            {% if h.check_access('user_create') %}
-              {% block help_register %}
-                {% block help_register_inner %}
-                  <h2 class="h5"><a href="{{ h.url_for('user.register') }}">{{ _('Create an Account') }}</a></h2>
-                  <p>{{ _('Then sign right up, it only takes a minute.') }}</p>
-                {% endblock help_register_inner %}
-              {% endblock help_register %}
-            {% endif %}
-            {% block help_forgotten %}
-              {% block help_forgotten_inner %}
-                <h2 class="h5"><a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a></h2>
-                <p>{{ _('No problem, use our password recovery form to reset it.') }}</p>
-              {% endblock help_forgotten_inner %}
-            {% endblock help_forgotten %}
           {% endblock secondary_content %}
         </div>
       {% endblock secondary %}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 login_form">
       {% block primary_content %}
         {% block primary_content_inner %}
           {% block form %}

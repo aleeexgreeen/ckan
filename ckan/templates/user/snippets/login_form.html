@@ -21,14 +21,23 @@ Example:
   {{ form.input('login', label=_("Username or Email"), id='field-login', value="", icon='fa-regular fa-user', error=username_error, classes=["control-medium"]) }}
 
   {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fa-solid fa-fingerprint", error=password_error, classes=["control-medium"]) }}
-
-  {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000") }}
+  <div class="row">
+    {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000", classes=["col-md-6"]) }}
+    <div class="col-md-6">
+      <a href="{{ h.url_for('user.request_reset') }}" class="pull-right">{{ _('Forgotten your password?') }}</a>
+    </div>
+  </div>
 
   {% if g.recaptcha_publickey %}
     {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
   {% endif %}
 
   <div class="form-actions">
+    {% if h.check_access('user_create') %}
+      {% block create_account_button %}
+        <a href="{{ h.url_for('user.register') }}" class="btn btn-default">{{ _('Create account') }}</a>
+      {% endblock %}
+    {% endif %}
     {% block login_button %}
       <button class="btn btn-primary" type="submit">{{ _('Login') }}</button>
     {% endblock %}

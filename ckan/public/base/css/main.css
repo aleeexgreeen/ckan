@@ -10369,10 +10369,6 @@ h2,
     width: 100%;
     display: block !important;
   }
-  .login_content {
-    order: 1;
-    margin-top: 16px;
-  }
 }
 @media (min-width: 576px) {
   .login_container {
@@ -10389,7 +10385,10 @@ h2,
   .login_content {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+  }
+  .reset_form {
+    position: relative;
+    top: 25%;
   }
 }
 .login_wrapper {
@@ -10414,6 +10413,7 @@ h2,
 .heading_container {
   display: grid;
   grid-gap: 20px;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 575.98px) {
@@ -13060,6 +13060,7 @@ td.diff_header {
 
 .organization-group {
   padding-left: 0;
+  width: 100%;
 }
 
 .account-masthead {
