@@ -10863,7 +10863,11 @@ a.tag:hover {
 .module-narrow .nav-item > a {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+}
+@media (max-width: 991.98px) {
+  .module-narrow .nav-item > a {
+    flex-wrap: wrap;
+  }
 }
 .module-narrow .nav-item > a,
 .module-narrow .nav-aside li a {

@@ -19,7 +19,9 @@
     .nav-item>a {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        @include media-breakpoint-down(lg){
+            flex-wrap: wrap;
+        }
     }
     .nav-item>a,
     .nav-aside li a {
