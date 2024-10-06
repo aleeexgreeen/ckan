@@ -10994,22 +10994,6 @@ a.tag:hover {
   padding: 0.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
 }
-.filters .module-heading {
-  border-radius: 0.5rem;
-  font-weight: 400;
-  display: flex;
-  padding: 9px 16px 10px 14px;
-  align-items: center;
-  gap: 9px;
-}
-.filters .accordion-item {
-  background-color: unset;
-  border: unset;
-  border-radius: 0.5rem;
-}
-.filters .accordion-item:has(.accordion-button:disabled) {
-  background-color: #f2f4f7;
-}
 .filters .filter-svg {
   fill: none;
   stroke: #667085;
@@ -11017,22 +11001,42 @@ a.tag:hover {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.filters .accordion-button:not(.collapsed) {
+
+aside .accordion-item {
+  background-color: unset;
+  border: unset;
+  border-radius: 0.5rem;
+}
+aside .accordion-item:has(.accordion-button:disabled), aside .accordion-item .module-content {
+  background-color: #f2f4f7;
+}
+aside .accordion-item .module-content {
+  padding: 1rem;
+}
+aside .accordion-button:not(.collapsed) {
   box-shadow: none;
   background-color: #153084;
   color: #fff;
 }
-.filters .accordion-button:not(.collapsed) .filter-svg {
+aside .accordion-button:not(.collapsed) .filter-svg {
   stroke: #fff;
 }
-.filters .accordion-button:not(.collapsed)::after {
+aside .accordion-button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
-.filters .accordion-button {
+aside .accordion-button {
   background-color: #f2f4f7;
 }
-.filters .accordion-button:disabled::after {
+aside .accordion-button:disabled::after {
   background-image: none;
+}
+aside .module-heading {
+  border-radius: 0.5rem;
+  font-weight: 400;
+  display: flex;
+  padding: 9px 16px 10px 14px;
+  align-items: center;
+  gap: 9px;
 }
 
 .module-narrow .nav-item > a,

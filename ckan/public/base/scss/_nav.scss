@@ -103,28 +103,26 @@
         padding: .5rem;
         border-radius: 0 0 .5rem .5rem;
     }
-    .module-heading {
-        border-radius: .5rem;
-        font-weight: $font-weight-normal;
-        display: flex;
-        padding: 9px 16px 10px 14px;
-        align-items: center;
-        gap: 9px;
-    }
-    .accordion-item {
-        background-color: unset;
-        border: unset;
-        border-radius: 0.5rem;
-        &:has(.accordion-button:disabled) {
-            background-color: $gray-100;
-        }
-    }
     .filter-svg {
         fill:none;
         stroke:#667085;
         stroke-width: 2;
         stroke-linecap: round;
         stroke-linejoin: round;
+    }
+}
+
+aside {
+    .accordion-item {
+        background-color: unset;
+        border: unset;
+        border-radius: 0.5rem;
+        &:has(.accordion-button:disabled), .module-content {
+            background-color: $gray-100;
+        }
+        .module-content {
+            padding: 1rem;
+        }
     }
     .accordion-button:not(.collapsed) {
         box-shadow: none;
@@ -143,8 +141,15 @@
             background-image: none;
         }
     }
+    .module-heading {
+        border-radius: .5rem;
+        font-weight: $font-weight-normal;
+        display: flex;
+        padding: 9px 16px 10px 14px;
+        align-items: center;
+        gap: 9px;
+    }
 }
-
 
 .module-narrow .nav-item>a,
 .module-narrow .nav-aside li a {
