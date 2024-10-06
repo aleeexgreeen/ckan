@@ -33,14 +33,12 @@
 }
 
 .module-footer {
-    padding: 7px $gutterX 7px;
+    padding: 7px 7px;
     margin: 0;
+    text-align: center;
+    font-weight: 500;
 }
 
-.module .read-more {
-    font-weight: bold;
-    color: $layoutBoldColor;
-}
 
 .pagination-wrapper{
     text-align: center;
@@ -79,8 +77,7 @@
 // Secondary column specific
 .module-narrow {
     .module-heading,
-    .module-content,
-    .module-footer {
+    .module-content {
         padding-left: $gutterSmallX;
         padding-right: $gutterSmallX;
     }

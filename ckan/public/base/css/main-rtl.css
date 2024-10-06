@@ -10364,10 +10364,35 @@ h2,
   border: #d0d5dd solid 1px;
 }
 
+.login_form .form-actions {
+  align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .login_form .form-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .login_form .form-actions .btn {
+    flex-basis: auto;
+  }
+}
 @media (max-width: 767.98px) {
   .btn-light {
     width: 100%;
     display: block !important;
+  }
+  .login_form .form-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .login_form .form-actions .btn {
+    flex-basis: auto;
+  }
+  .login_form .form-actions .btn-light {
+    width: unset;
   }
 }
 @media (min-width: 576px) {
@@ -10393,6 +10418,25 @@ h2,
 }
 .login_wrapper {
   padding: 24px;
+}
+
+.login_aside {
+  margin-bottom: 1rem;
+}
+
+.form-group.form_password {
+  margin-bottom: 0;
+}
+
+.forgotten_password {
+  display: flex;
+  flex-wrap: wrap;
+}
+.forgotten_password a {
+  margin-bottom: 1rem;
+}
+.forgotten_password .form-group {
+  margin-bottom: 1rem;
 }
 
 .form-group .controls .icon {
@@ -10525,13 +10569,10 @@ a.tag:hover {
 }
 
 .module-footer {
-  padding: 7px 2rem 7px;
+  padding: 7px 7px;
   margin: 0;
-}
-
-.module .read-more {
-  font-weight: bold;
-  color: #000;
+  text-align: center;
+  font-weight: 500;
 }
 
 .pagination-wrapper {
@@ -10568,8 +10609,7 @@ a.tag:hover {
 }
 
 .module-narrow .module-heading,
-.module-narrow .module-content,
-.module-narrow .module-footer {
+.module-narrow .module-content {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -12732,18 +12772,14 @@ td.diff_header {
     overflow: hidden;
     padding: 0 10px;
   }
-  .js .main .secondary .filters > div .module-footer {
-    display: none;
-  }
   .js body.filters-modal .secondary .filters .hide-filters {
     display: inline-block;
     position: absolute;
     top: 14px;
     right: 17px;
-    opacity: 0.6;
   }
   .js body.filters-modal .secondary .filters .hide-filters i {
-    font-size: 18px;
+    font-size: 24px;
   }
   .js .show-filters.btn {
     display: inline-block;

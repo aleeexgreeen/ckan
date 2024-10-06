@@ -23,10 +23,41 @@ h2,
         border: $table-border-color solid 1px;
     }
 }
+.login_form {
+    .form-actions {
+        align-items: center;
+    }
+}
+@include media-breakpoint-down(lg){
+    .login_form {
+        .form-actions {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .btn {
+                flex-basis: auto;
+            }
+        }
+    }
+}
+
 @include media-breakpoint-down(md){
     .btn-light {
         width: 100%;
         display: block !important;
+    }
+    .login_form {
+        .form-actions {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .btn {
+                flex-basis: auto;
+            }
+            .btn-light {
+                width: unset;
+            }
+        }
     }
 }
 
@@ -54,6 +85,25 @@ h2,
 
 .login_wrapper {
     padding: 24px;
+}
+
+.login_aside {
+    margin-bottom: 1rem;
+}
+
+.form-group.form_password {
+    margin-bottom: 0;
+}
+
+.forgotten_password {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        margin-bottom: 1rem;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
 }
 
 .form-group .controls .icon {

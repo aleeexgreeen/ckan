@@ -20,12 +20,10 @@ Example:
 
   {{ form.input('login', label=_("Username or Email"), id='field-login', value="", icon='fa-regular fa-user', error=username_error, classes=["control-medium"]) }}
 
-  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fa-solid fa-fingerprint", error=password_error, classes=["control-medium"]) }}
-  <div class="row">
-    {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000", classes=["col-md-6"]) }}
-    <div class="col-md-6">
-      <a href="{{ h.url_for('user.request_reset') }}" class="pull-right">{{ _('Forgotten your password?') }}</a>
-    </div>
+  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fa-solid fa-fingerprint", error=password_error, classes=["control-medium form_password"]) }}
+  <div class="forgotten_password">
+    <a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
+    {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000", classes=["col-md-12"]) }}
   </div>
 
   {% if g.recaptcha_publickey %}
@@ -35,7 +33,7 @@ Example:
   <div class="form-actions">
     {% if h.check_access('user_create') %}
       {% block create_account_button %}
-        <a href="{{ h.url_for('user.register') }}" class="btn btn-default">{{ _('Create account') }}</a>
+        <a class="btn btn-light" href="{{ h.url_for('user.register') }}">{{ _('Create account') }}</a>
       {% endblock %}
     {% endif %}
     {% block login_button %}

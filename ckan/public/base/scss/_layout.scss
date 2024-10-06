@@ -132,17 +132,13 @@
         overflow: hidden;
         padding: 0 10px;
     }
-    .js .main .secondary .filters>div .module-footer {
-        display: none;
-    }
     .js body.filters-modal .secondary .filters .hide-filters {
         display: inline-block;
         position: absolute;
         top: 14px;
         right: 17px;
-        opacity: 0.6;
         i {
-            font-size: 18px;
+            font-size: 24px;
         }
     }
     .js .show-filters.btn {

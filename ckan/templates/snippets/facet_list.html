@@ -82,20 +82,19 @@ Dictionary with search facets
 					    </li>
 					{% endfor %}
 				    </ul>
+					<p class="module-footer">
+						{% if h.get_param_int('_%s_limit' % name) %}
+						{% if h.has_more_facets(name, search_facets) %}
+							<a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a>
+						{% endif %}
+						{% else %}
+							<a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular {facet_type}').format(facet_type=title) }}</a>
+						{% endif %}
+					</p>
 				</nav>
-
-				<p class="module-footer">
-				    {% if h.get_param_int('_%s_limit' % name) %}
-					{% if h.has_more_facets(name, search_facets) %}
-					    <a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a>
-					{% endif %}
-				    {% else %}
-						<a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular {facet_type}').format(facet_type=title) }}</a>
-				    {% endif %}
-				</p>
-			    {% else %}
-				<p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
-			    {% endif %}
+				{% else %}
+					<p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
+				{% endif %}
 			{% endwith %}
 		    {% endblock %}
 		</div>
