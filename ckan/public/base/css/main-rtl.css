@@ -10359,6 +10359,10 @@ h2,
   background-color: #d0d5dd !important;
 }
 
+.btn-light {
+  border: #153084 solid 1px;
+  color: #153084;
+}
 .btn-light:hover {
   background-color: #d0d5dd !important;
   border: #d0d5dd solid 1px;

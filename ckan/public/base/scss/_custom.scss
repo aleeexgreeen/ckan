@@ -18,6 +18,8 @@ h2,
 }
 
 .btn-light {
+    border: $brand-500 solid 1px;
+    color: $brand-500;
     &:hover {
         background-color: $gray-300 !important;
         border: $table-border-color solid 1px;
