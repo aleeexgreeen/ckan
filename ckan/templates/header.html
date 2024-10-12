@@ -105,7 +105,7 @@
         {% if not c.userobj %}
           {% block header_account_notlogged %}
             <div class="col-md-2 login-btn-container">
-              <a class="btn" href="{{ h.url_for('user.login') }}">
+              <a class="btn btn-primary" href="{{ h.url_for('user.login') }}">
                 {{ _('Login') }}
                 <i class="fa fa-sign-in"></i>
               </a>
@@ -124,7 +124,7 @@
                 Work in progress. Share your feedback as you observe how the new design comes to life.
               </span>
               <span class="col-sm-3 feedback-button">
-                <a class="btn btn-light pull-right" target="_blank" rel="noopener noreferrer" href="https://github.com/ckan/ckan/discussions/8399">
+                <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/ckan/ckan/discussions/8399">
                   Share feedback
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>

@@ -4,15 +4,6 @@
 {% block maintag %}<div class="login_container">{% endblock %}
 {% block main_content %}
   <div class="row login_wrapper" role="main">
-    <div>
-    {% block flash %}
-      <div class="flash-messages pull-right col-md-6">
-        {% block flash_inner %}
-          {{ super() }}
-        {% endblock flash_inner %}
-      </div>
-    </div>
-    {% endblock flash %}
     <div class="col-md-6 login_content">
       {% block secondary %}
         <div class="login_aside">
@@ -29,7 +20,14 @@
         </div>
       {% endblock secondary %}
     </div>
+    {% block flash %}
     <div class="col-md-6 login_form">
+      <div class="flash-messages">
+        {% block flash_inner %}
+          {{ super() }}
+        {% endblock flash_inner %}
+      </div>
+    {% endblock flash %}
       {% block primary_content %}
         {% block primary_content_inner %}
           {% block form %}

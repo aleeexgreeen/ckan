@@ -10,24 +10,11 @@ h2,
     font-weight: 600;
 }
 
-.btn-default {
-    border: $table-border-color solid 1px;
-    &:hover {
-        background-color: $gray-300 !important;
-    }
-}
-
-.btn-light {
-    border: $brand-500 solid 1px;
-    color: $brand-500;
-    &:hover {
-        background-color: $gray-300 !important;
-        border: $table-border-color solid 1px;
-    }
-}
 .login_form {
+    display: inline-grid;
     .form-actions {
         align-items: center;
+        padding: 1rem 0.5rem 1rem 0;
     }
 }
 @include media-breakpoint-down(lg){
@@ -78,10 +65,6 @@ h2,
     .login_content {
         display: flex;
         flex-direction: column;
-    }
-    .reset_form {
-        position: relative;
-        top: 25%;
     }
 }
 

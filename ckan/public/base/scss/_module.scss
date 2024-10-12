@@ -44,6 +44,12 @@
     text-align: center;
     border-top: 1px solid $hr-color;
     padding-top: math.div($grid-gutter-width,3);
+    .page-item {
+        margin: 0 4px;
+    }
+    .page-link {
+        border-radius: $pagination-border-radius;
+    }
 }
 
 .module h1 {
