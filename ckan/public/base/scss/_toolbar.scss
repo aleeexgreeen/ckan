@@ -18,12 +18,12 @@
     padding: 0;
     border: none;
     background: none;
-    font-size: $font-size-lg;
+    font-size: $breadcrumb-font-size;
 }
 
 .toolbar .breadcrumb li {
-    padding-left: $breadcrumb-item-padding-x;
     &:not(:first-child) {
+        padding-left: $breadcrumb-item-padding-x;
         &::before {
             float: left; // Suppress inline spacings and underlining of the separator
             padding-right: $breadcrumb-item-padding-x;
@@ -51,6 +51,7 @@
 .toolbar .breadcrumb .active a,
 .toolbar .breadcrumb a.active {
     color: $breadcrumbActiveTextColor;
+    font-weight: $font-weight-semi-bold;
 }
 
 .actions {
