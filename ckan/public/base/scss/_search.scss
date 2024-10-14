@@ -131,6 +131,8 @@
         padding-left: 8px;
     }
     .form-control {
-        width: 100%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
     }
 }
