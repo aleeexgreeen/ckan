@@ -10568,7 +10568,7 @@ a.tag:hover {
   font-weight: 500;
 }
 
-.module h1, .module .h1 {
+h1.page-heading, .page-heading.h1 {
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -11072,6 +11072,27 @@ aside .accordion .accordion-collapse.show {
     padding-left: 0;
   }
 }
+.nav-tab-aside {
+  background-color: #f2f4f7;
+  border-radius: 8px;
+}
+.nav-tab-aside .active {
+  background-color: #153084;
+}
+.nav-tab-aside .active a {
+  color: #fff;
+}
+.nav-tab-aside li {
+  padding: 10px 16px;
+  width: 100%;
+  border-radius: 8px;
+}
+.nav-tab-aside li a {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
 .nav-stacked > li {
   float: none;
 }
@@ -13411,6 +13432,10 @@ td.diff_header {
   margin-bottom: 20px;
 }
 
+#followee-filter {
+  position: relative;
+  z-index: 1;
+}
 #followee-filter .btn {
   display: inline-block;
 }
@@ -13427,6 +13452,10 @@ td.diff_header {
   max-width: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.user {
+  font-size: 1.5rem;
 }
 
 .dashboard-context {

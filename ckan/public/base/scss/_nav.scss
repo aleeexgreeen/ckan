@@ -205,6 +205,26 @@ aside {
     }
 }
 
+.nav-tab-aside {
+    background-color: #f2f4f7;
+    border-radius: 8px;
+    .active {
+        background-color: $brand-500;
+        a {
+            color: $white;
+        }
+    }
+    li {
+        padding: 10px 16px;
+        width: 100%;
+        border-radius: 8px;
+        a {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
+    }
+}
 
 // STACKED NAV
 // -----------

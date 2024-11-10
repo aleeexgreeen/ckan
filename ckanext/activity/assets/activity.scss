@@ -1,28 +1,30 @@
 // Activity Stream base colors
 $activityColorText: #FFFFFF;
-$activityColorBlank: #999999;
-$activityColorNew: #69A67A;
-$activityColorNeutral: #767DCE;
-$activityColorModify: #767DCE;
+$activityColorBlank: #667085;
+$activityColorNew: #039B9B;
+$activityColorNeutral: #928009;
+$activityColorModify: #430D73;
 $activityColorDelete: #B95252;
 $activityColorEmpty: #6E6E6E;
 
 .activity {
-    padding: 0;
+    padding: .5rem;
     list-style-type: none;
-
+    border-radius: 20px;
+    background-color: #f2f4f7;
     .item {
         position: relative;
-        margin: 0 0 15px 0;
-        padding: 0;
-
+        padding: 1rem;
+        border-bottom: 1px solid #e4e7ec;
+        &:last-child{
+            border-bottom: none;
+        }
         .user-image {
             border-radius: 100px;
         }
 
         .date {
             color: $activityColorBlank;
-            font-size: 12px;
         }
 
         &.no-avatar p {
@@ -36,8 +38,6 @@ $activityColorEmpty: #6E6E6E;
     }
 
     @media (min-width: 768px) {
-        background: transparent url('/dotted.png') 21px 0 repeat-y;
-
         .item {
             .date {
                 margin: 5px 0 0 80px;

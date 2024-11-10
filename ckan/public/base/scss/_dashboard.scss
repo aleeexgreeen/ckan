@@ -1,4 +1,6 @@
 #followee-filter {
+    position: relative;
+    z-index: 1;
     .btn {
         display: inline-block;
         span,
@@ -16,6 +18,10 @@
             text-overflow: ellipsis;
         }
     }
+}
+
+.user {
+    font-size: 1.5rem;
 }
 
 .dashboard-context {
