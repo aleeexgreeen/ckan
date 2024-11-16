@@ -8,8 +8,11 @@
   {% endif %}
 {% endblock %}
 
+{% block page_heading %}
+  {{ h.humanize_entity_type('group', group_type, 'my label') or _('My Groups') }}
+{% endblock %}
+
 {% block primary_content_inner %}
-  <h1 >{{ h.humanize_entity_type('group', group_type, 'my label') or _('My Groups') }}</h1>
   {% set groups = h.groups_available(am_member=True,
     include_dataset_count=True,
     include_member_count=True) %}

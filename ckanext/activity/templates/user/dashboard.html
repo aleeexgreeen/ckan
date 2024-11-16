@@ -9,12 +9,11 @@
   {{ super() }}
 {% endblock %}
 
+{% block page_heading %}{{ _('News feed') }}{% endblock %}
+{% block page_subheading %}<p>{{ _("Activity from items that I'm following") }}</p>{% endblock %}
+
 {% block primary_content_inner %}
   <div class="row" data-module="dashboard">
-    <div class="page-heading col-md-6">
-      <h1>{% block page_heading %}{{ _('News feed') }}{% endblock %}</h1>
-      <p>{% block page_subheading %}{{ _("Activity from items that I'm following") }}{% endblock %}</p>
-    </div>
     {% snippet 'user/snippets/followee_dropdown.html', context=dashboard_activity_stream_context, followees=followee_list %}
     {% snippet 'snippets/stream.html', activity_stream=dashboard_activity_stream %}
   </div>

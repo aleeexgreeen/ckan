@@ -13574,6 +13574,27 @@ td.diff_header {
   margin: 3px 0;
 }
 
+.dashboard.page-header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media (min-width: 576px) {
+  .dashboard-container {
+    flex-direction: row;
+  }
+  .dashboard-container .page_primary_action {
+    display: block;
+  }
+  .dashboard-container .page_primary_action a {
+    float: right;
+  }
+}
+
 .resource-view .actions {
   right: 0;
 }

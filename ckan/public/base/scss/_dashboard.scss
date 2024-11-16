@@ -96,3 +96,22 @@
         margin: 3px 0;
     }
 }
+
+.dashboard.page-header {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column-reverse;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+        .page_primary_action {
+            display: block;
+            a {
+                float: right;
+            }
+        }
+    }
+}
