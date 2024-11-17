@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block page_heading %}
-  {{ h.humanize_entity_type('organization', org_type, 'my label') or _('My Organizations') }}
+  <h1>{{ h.humanize_entity_type('organization', org_type, 'my label') or _('My Organizations') }}</h1>
 {% endblock %}
 
 {% block primary_content_inner %}

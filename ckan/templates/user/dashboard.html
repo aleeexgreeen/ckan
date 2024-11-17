@@ -35,8 +35,7 @@
     <div class="module-content">
       <div class="dashboard-container row">
         <div class="page-heading col-md-6">
-          <h1>{% block page_heading %}{% endblock %}</h1>
-          {% block page_subheading %}{% endblock %}
+          {% block page_heading %}{% endblock %}
         </div>
         {% if self.page_primary_action() | trim %}
           <div class="page_primary_action col-md-6">

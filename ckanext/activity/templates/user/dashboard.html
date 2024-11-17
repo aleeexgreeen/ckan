@@ -9,8 +9,10 @@
   {{ super() }}
 {% endblock %}
 
-{% block page_heading %}{{ _('News feed') }}{% endblock %}
-{% block page_subheading %}<p>{{ _("Activity from items that I'm following") }}</p>{% endblock %}
+{% block page_heading %}
+  <h1>{{ _('News feed') }}</h1>
+  <p>{{ _("Activity from items that I'm following") }}</p>
+{% endblock %}
 
 {% block primary_content_inner %}
   <div class="row" data-module="dashboard">
