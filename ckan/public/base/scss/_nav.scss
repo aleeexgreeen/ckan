@@ -236,14 +236,15 @@ aside {
     @include media-breakpoint-up(lg) {
         display: flex;
         flex-direction: row;
+        li {
+            flex: 1 0 auto;
+        }
     }
     li {
         padding: .5rem 1rem;
         gap: .5rem;
         border-radius: 8px;
-        @include media-breakpoint-up(md) {
-            flex: 1 0 auto;
-        }
+        min-width: max-content;
         a {
             color: $brand-300;
             display: block;
