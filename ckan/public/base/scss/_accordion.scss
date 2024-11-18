@@ -59,16 +59,12 @@
   }
   
   .accordion-item {
-    background-color: $accordion-bg;
     border-bottom: $accordion-border-width solid $gray-300;
+    background-color: $accordion-bg;
   }
   
   .accordion-body {
     padding: $accordion-body-padding-y $accordion-body-padding-x;
-  }
-
-  .accordion-collapse {
-    background-color: $gray-50;
   }
   
   

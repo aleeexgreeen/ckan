@@ -10387,6 +10387,14 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     text-align: center;
   }
 }
+[id^=lang].btn-check + label.radio::after {
+  content: unset;
+}
+
+.modal-header > h1, .modal-header > .h1, .modal-header > h2, .modal-header > .h2, .modal-header > h3, .modal-header > .h3, .modal-header > h4, .modal-header > .h4, .modal-header > h5, .modal-header > .h5, .modal-header > h6, .modal-header > .h6 {
+  margin-bottom: 0;
+}
+
 .tag {
   display: inline-block;
   margin-bottom: 4px;
@@ -14005,16 +14013,12 @@ td.diff_header {
 }
 
 .accordion-item {
-  background-color: #fff;
   border-bottom: 1px solid #d0d5dd;
+  background-color: #fff;
 }
 
 .accordion-body {
   padding: 1rem 1.25rem;
-}
-
-.accordion-collapse {
-  background-color: #f9fafb;
 }
 
 .accordion-flush .accordion-collapse {
