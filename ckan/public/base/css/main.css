@@ -12343,7 +12343,7 @@ td.diff_header {
   display: block;
   position: absolute;
   top: 50%;
-  margin-top: -10px;
+  margin-top: -12px;
   right: 10px;
   height: 20px;
   padding: 0;
@@ -12950,10 +12950,6 @@ td.diff_header {
 }
 .homepage .module-search .search-form input {
   font-size: 16px;
-}
-.homepage .module-search .search-form button {
-  border: none;
-  margin-left: -40px;
 }
 .homepage .module-search .search-input {
   color: #000;
