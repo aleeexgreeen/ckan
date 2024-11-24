@@ -823,10 +823,19 @@ def user_activity(id: str) -> str:
         "id":  id,
         "activity_stream": activity_stream,
         "newer_activities_url": newer_activities_url,
-        "older_activities_url": older_activities_url
+        "older_activities_url": older_activities_url,
+        "object_type": "user"
     })
 
-    return tk.render("user/activity_stream.html", extra_vars)
+    if ckan_request.htmx:
+        return tk.render(
+            "snippets/activity_stream.html", extra_vars
+        )
+    else:
+        return tk.render(
+            "user/activity_stream.html", extra_vars
+        )
+
 
 
 @bp.route("/dashboard/", strict_slashes=False)
