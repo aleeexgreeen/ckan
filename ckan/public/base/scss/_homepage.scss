@@ -174,19 +174,13 @@
     padding: 1rem;
     a {
         display: grid;
+        img {
+            max-width: 200;
+            max-height: 50;
+        }
     }
     h3 {
         margin: 16px 0;
-    }
-    .group-list {
-        display: flex;
-        justify-content: space-between;
-        i {
-            font-size: 30px;
-            color: $black;
-            align-content: end;
-            padding-bottom: 25px;
-        }
     }
 }
 

@@ -13083,18 +13083,12 @@ td.diff_header {
 .org-cards a {
   display: grid;
 }
+.org-cards a img {
+  max-width: 200;
+  max-height: 50;
+}
 .org-cards h3, .org-cards .h3 {
   margin: 16px 0;
-}
-.org-cards .group-list {
-  display: flex;
-  justify-content: space-between;
-}
-.org-cards .group-list i {
-  font-size: 30px;
-  color: #000;
-  align-content: end;
-  padding-bottom: 25px;
 }
 
 .group-card {
