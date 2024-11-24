@@ -2,13 +2,11 @@
 
 <h2>Organizations</h2>
 <p> Browse organizations involved in dataset distribution</p>
-<div class="featured-groups">
-{% for organization in organizations %}
-  <div class="org-cards">
-    {% snippet 'snippets/organization_item.html', organization=organization %}
-  </div>
-{% endfor %}
-</div>
+<ul class="featured-groups">
+  {% for organization in organizations %}
+    {% snippet 'organization/snippets/organization_item.html', organization=organization %}
+  {% endfor %}
+</ul>
 <div>
   <a class="btn btn-outline pull-right" href="{{ h.url_for('organization.index') }}">{{ _('View all organizations') }}</a>
 </div>

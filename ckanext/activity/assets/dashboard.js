@@ -19,11 +19,11 @@ this.ckan.module('dashboard', function ($) {
      */
     initialize: function () {
       $.proxyAll(this, /_on/);
-      this.button = $('#followee-filter .btn').
+      this.button = $('#followee-filter .followee-toggle').
         on('click', this._onShowFolloweeDropdown);
       var title = this.button.prop('title');
 
-      this.button.popover = new bootstrap.Popover(document.querySelector('#followee-filter .btn'), {
+      this.button.popover = new bootstrap.Popover(document.querySelector('#followee-filter .followee-toggle'), {
           placement: 'bottom',
           html: true,
           template: '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body followee-container"></div></div>',

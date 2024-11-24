@@ -12609,6 +12609,11 @@ td.diff_header {
   margin-bottom: 1rem;
 }
 
+.content_action .btn {
+  float: right;
+  margin-bottom: 1rem;
+}
+
 .no-nav .page-header {
   border-radius: 3px 3px 0 0;
 }
@@ -13070,12 +13075,26 @@ td.diff_header {
 }
 .org-cards {
   list-style: none;
-}
-.org-cards .module-heading {
-  display: grid;
   background-color: #fff;
   border: none;
   border-radius: 6px;
+  padding: 1rem;
+}
+.org-cards a {
+  display: grid;
+}
+.org-cards h3, .org-cards .h3 {
+  margin: 16px 0;
+}
+.org-cards .group-list {
+  display: flex;
+  justify-content: space-between;
+}
+.org-cards .group-list i {
+  font-size: 30px;
+  color: #000;
+  align-content: end;
+  padding-bottom: 25px;
 }
 
 .group-card {
@@ -13422,22 +13441,42 @@ td.diff_header {
   position: relative;
   z-index: 1;
 }
-#followee-filter .btn {
-  display: inline-block;
+
+#followee-popover {
+  color: #000;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 2px 16px 5px 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
-#followee-filter .btn span,
-#followee-filter .btn strong {
-  line-height: 1.5;
+#followee-popover:focus {
+  box-shadow: 0 0 0 0.25rem rgba(21, 48, 132, 0.25);
 }
-#followee-filter .btn span {
-  font-weight: normal;
+#followee-popover:hover {
+  text-decoration: none;
 }
-#followee-filter .btn strong {
-  margin: 0 5px;
-  white-space: nowrap;
-  max-width: 90px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@media (min-width: 768px) {
+  #followee-popover {
+    float: right;
+    margin-left: 15px;
+    width: max-content;
+  }
+}
+#followee-popover .label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #667085;
+}
+#followee-popover .dropdown-content {
+  padding: 2px 3rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+#followee-popover .caret {
+  align-content: center;
 }
 
 .user {

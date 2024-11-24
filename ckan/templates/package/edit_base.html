@@ -9,10 +9,6 @@
     {% endif %}
 {% endblock %}
 
-{% block content_action %}
-    {% link_for h.humanize_entity_type('package', pkg.type, 'view label') or _('View dataset'), named_route=pkg.type ~ '.read', id=pkg.name, class_='btn btn-default', icon='eye' %}
-{% endblock %}
-
 {% block content_primary_nav %}
     {{ h.build_nav_icon(pkg.type ~ '.edit', _('Edit metadata'), id=pkg.name, icon='pencil') }}
     {{ h.build_nav_icon(pkg.type ~ '.resources', _('Reorder resources'), id=pkg.name, icon='bars') }}

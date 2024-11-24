@@ -1,33 +1,25 @@
 {% set url=h.url_for(organization.type ~ '.read', id=organization.name) %}
 {% block organization_item %}
-  <section class="group-list module module-narrow module-shallow">
+  <section class="group-list">
     <a href="{{ url }}">
       {% block organization_item_header %}
-        <span class="module-heading">
-          {% block organization_item_header_image %}
-          <figure class="module-image">
-            <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" />
-          </figure>
-          {% endblock %}
-          <span class="module-heading-item">
-            <span class="module-heading-content">
-              {% block organization_item_header_title %}
-                <h3 class="media-heading">{{ organization.title or organization.name }}</h3>
-              {% endblock %}
-              {% block organization_item_header_datasets %}
-                  {% if organization.package_count %}
-                    {{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}
-                  {% elif organization.package_count == 0 %}
-                    {{ _('0 Datasets') }}
-                  {% endif %}
-              {% endblock %}
-              </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <path d="M9.16675 22H34.8334M34.8334 22L22.0001 9.16663M34.8334 22L22.0001 34.8333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        {% block organization_item_header_image %}
+          <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-200x50.png') }}" alt="{{ organization.name }}" width="210" height="50"/>
+        {% endblock %}
+        {% block organization_item_header_title %}
+          <h3>{{ organization.title or organization.name }}</h3>
+        {% endblock %}
+        {% block organization_item_header_datasets %}
+          <span class="count">
+            {% if organization.package_count %}
+              {{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}
+            {% elif organization.package_count == 0 %}
+              {{ _('0 Datasets') }}
+            {% endif %}
           </span>
-        </span>
+        {% endblock %}
       {% endblock %}
     </a>
+    <i class="fa-solid fa-arrow-right"></i>
   </section>
 {% endblock %}

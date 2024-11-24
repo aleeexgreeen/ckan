@@ -23,7 +23,7 @@ Example:
   {% block image %}
     {% if group.image_display_url %}
       <figure class="module-image" href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">
-        <img src="{{ group.image_display_url }}" alt="{{ group.name }}" />
+        <img src="{{ group.image_display_url }}" class="img-fluid media-image" alt="{{ group.name }}" />
       </figure>
     {% else %}
       <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">

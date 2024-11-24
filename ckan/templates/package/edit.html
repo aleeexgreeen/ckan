@@ -1,5 +1,9 @@
 {% extends 'package/edit_base.html' %}
 
+{% block content_action %}
+    {% link_for h.humanize_entity_type('package', pkg.type, 'view label') or _('View dataset'), named_route=pkg.type ~ '.read', id=pkg.name, class_='btn btn-default', icon='eye' %}
+{% endblock %}
+
 {% block primary_content_inner %}
     {% block form %}
 	{{- h.snippet(form_snippet, pkg_dict=pkg_dict, **form_vars) -}}

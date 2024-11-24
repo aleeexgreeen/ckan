@@ -168,11 +168,25 @@
 }
 .org-cards {
     list-style: none;
-    .module-heading {
+    background-color: $white;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    a {
         display: grid;
-        background-color: $white;
-        border: none;
-        border-radius: 6px;
+    }
+    h3 {
+        margin: 16px 0;
+    }
+    .group-list {
+        display: flex;
+        justify-content: space-between;
+        i {
+            font-size: 30px;
+            color: $black;
+            align-content: end;
+            padding-bottom: 25px;
+        }
     }
 }
 
