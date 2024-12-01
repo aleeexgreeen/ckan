@@ -171,7 +171,6 @@
     background-color: $white;
     border: none;
     border-radius: 6px;
-    padding: 1rem;
     a {
         display: grid;
         img {
@@ -189,12 +188,14 @@
     background-color: $white;
     border: none;
     border-radius: 6px;
-    padding: 1rem;
     a {
         display: grid;
     }
     h3 {
         margin: 16px 0;
+    }
+    input {
+        margin: 0 1rem 1rem;
     }
 }
 

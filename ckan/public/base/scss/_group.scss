@@ -4,12 +4,10 @@
 
 // Group List
 // A group item summary plus a list of datasets belonging to the group.
-// TODO: This should really be on the parent.
-.group-list:nth-child(odd) {
-    clear: left;
+
+.group-list {
+    padding: 1rem;
 }
-
-
 
 .group-list .dataset-content {
     min-height: 54px;

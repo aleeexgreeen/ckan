@@ -15,10 +15,9 @@ Example:
 {% set url = h.url_for(type ~ '.read', id=group.name) %}
 {% block item %}
 <li class="group-card">
-  <section class="group-list">
   {% block link %}
   {% set view_label = _('Open details page for {name}').format(name=group.display_name) %}
-    <a href="{{ url }}" aria-label="{{view_label }}" data-bs-title="{{ view_label }}" data-bs-toggle="tooltip">
+    <a href="{{ url }}" aria-label="{{ view_label }}" data-bs-title="{{ view_label }}" data-bs-toggle="tooltip" class="group-list">
   {% block item_inner %}
   {% block image %}
     {% if group.image_display_url %}
@@ -60,6 +59,5 @@ Example:
     <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" aria-label="{{ remove_label }}" data-bs-title="{{ remove_label }}" data-bs-toggle="tooltip" />
   {% endif %}
 {% endblock %}
-</section>
 </li>
 {% endblock %}

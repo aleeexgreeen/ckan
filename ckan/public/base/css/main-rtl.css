@@ -12466,8 +12466,8 @@ td.diff_header {
   margin: 0 -5px 5px;
 }
 
-.group-list:nth-child(odd) {
-  clear: left;
+.group-list {
+  padding: 1rem;
 }
 
 .group-list .dataset-content {
@@ -13078,7 +13078,6 @@ td.diff_header {
   background-color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 1rem;
 }
 .org-cards a {
   display: grid;
@@ -13096,13 +13095,15 @@ td.diff_header {
   background-color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 1rem;
 }
 .group-card a {
   display: grid;
 }
 .group-card h3, .group-card .h3 {
   margin: 16px 0;
+}
+.group-card input {
+  margin: 0 1rem 1rem;
 }
 
 .organization-group {
