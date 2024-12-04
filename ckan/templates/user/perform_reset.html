@@ -3,6 +3,9 @@
 
 {% block subtitle %}{{ _('Reset Your Password') }}{% endblock %}
 {% block page_heading %}{{ _('Reset Your Password') }}{% endblock %}
+{% block breadcrumb_content %}
+  <li class="active">{{ _('Password Reset') }}</li>
+{% endblock %}
 
 {% block form %}
   <form action="" method="post">
@@ -23,11 +26,11 @@
   </form>
 {% endblock form %}
 
-{% block secondary_content %}
+{% block login_content %}
   {% block help %}
     {% block help_inner %}
       <h2 class="h5">{{ _('How does this work?') }}</h2>
       <p>{% trans %}Simply enter a new password and we'll update your account{% endtrans %}</p>
     {% endblock help_inner %}
   {% endblock help %}
-{% endblock secondary_content %}
+{% endblock login_content %}

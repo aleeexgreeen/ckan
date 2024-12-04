@@ -10322,8 +10322,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   }
 }
 @media (min-width: 576px) {
-  .login_container {
-    padding: 120px 0;
+  .login_main {
     background-color: #f2f4f7;
   }
   .login_wrapper {
@@ -10331,19 +10330,15 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     min-height: 300px;
     background-color: #fff;
     border-radius: 24px;
-    padding: 48px;
+    padding: 1.5rem;
   }
   .login_content {
     display: flex;
     flex-direction: column;
   }
 }
-.login_wrapper {
-  padding: 24px;
-}
-
-.login_aside {
-  margin-bottom: 1rem;
+.login_main {
+  padding: 20px 0;
 }
 
 .form-group.form_password {
@@ -11498,6 +11493,7 @@ select[data-module=autocomplete] {
 
 .alert-danger a {
   color: #842029;
+  text-decoration: underline;
 }
 
 .form-group.has-error input,

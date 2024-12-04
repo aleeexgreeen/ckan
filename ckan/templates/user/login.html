@@ -1,11 +1,17 @@
 {% extends "page.html" %}
 
 {% block subtitle %}{{ _('Login') }}{% endblock %}
-{% block maintag %}<div class="login_container">{% endblock %}
+{% block breadcrumb_content %}
+  <li class="active">{{ h.nav_link(_('Login'), named_route='user.login') }}</li>
+{% endblock %}
+{% block maintag %}<div class="login_main">{% endblock %}
 {% block main_content %}
+  {% block toolbar %}
+    {{ super() }}
+  {% endblock %}
   <div class="row login_wrapper" role="main">
-    <div class="col-md-6 login_content">
-      {% block secondary %}
+    {% block primary %}
+      <div class="col-md-6 login_content">
         <div class="login_aside">
           <div class="heading_container">
             {% block logo %}
@@ -15,19 +21,18 @@
               {% block page_heading %}{{ _('Login') }}{% endblock %}
             </h1>
           </div>
-          {% block secondary_content %}
-          {% endblock secondary_content %}
+          {% block login_content %}
+          {% endblock login_content %}
         </div>
-      {% endblock secondary %}
-    </div>
-    {% block flash %}
-    <div class="col-md-6 login_form">
-      <div class="flash-messages">
-        {% block flash_inner %}
-          {{ super() }}
-        {% endblock flash_inner %}
       </div>
-    {% endblock flash %}
+    <div class="col-md-6 login_form">
+      {% block flash %}
+        <div class="flash-messages">
+          {% block flash_inner %}
+            {{ super() }}
+          {% endblock flash_inner %}
+        </div>
+      {% endblock flash %}
       {% block primary_content %}
         {% block primary_content_inner %}
           {% block form %}
@@ -36,5 +41,6 @@
         {% endblock primary_content_inner %}
       {% endblock primary_content %}
     </div>
+    {% endblock primary %}
   </div>
 {% endblock main_content %}

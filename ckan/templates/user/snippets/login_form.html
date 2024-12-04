@@ -18,12 +18,12 @@ Example:
   {{ h.csrf_input() }}
   {{ form.errors(errors=error_summary) }}
 
-  {{ form.input('login', label=_("Username or Email"), id='field-login', value="", icon='fa-regular fa-user', error=username_error, classes=["control-medium"]) }}
+  {{ form.input('login', label=_("Username or Email"), id='field-login', value="", icon='user', error=username_error, classes=["control-medium"]) }}
 
-  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fa-solid fa-fingerprint", error=password_error, classes=["control-medium form_password"]) }}
+  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fingerprint", error=password_error, classes=["control-medium form_password"]) }}
   <div class="forgotten_password">
-    <a href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
-    {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000", classes=["col-sm-12"]) }}
+    <a class="col-12" href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
+    {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000") }}
   </div>
 
   {% if g.recaptcha_publickey %}

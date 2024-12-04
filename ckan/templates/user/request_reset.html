@@ -4,6 +4,10 @@
 
 {% block page_heading %}{{ _('Reset your password') }}{% endblock %}
 
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Password Reset'), named_route='user.request_reset' %}</li>
+{% endblock %}
+
 {% block primary_content_inner %}
   {% block form %}
     <form action="" class="reset_form" method="post">
@@ -24,7 +28,7 @@
   {% endblock form %}
 {% endblock primary_content_inner %}
 
-{% block secondary_content %}
+{% block login_content %}
   {% block help %}
       {% block help_inner %}
         <h2 class="h5">{{ _('How does this work?') }}</h2>
@@ -33,4 +37,4 @@
             {% endtrans %}</p>
       {% endblock help_inner %}
   {% endblock help %}
-{% endblock secondary_content %}
+{% endblock login_content %}
