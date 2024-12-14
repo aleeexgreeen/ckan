@@ -1,4 +1,5 @@
 {% set dataset_type = h.default_package_type() %}
+{% import 'macros/nav_link.html' as nav %}
 
 {% block header_wrapper %}
   {% block header_account %}
@@ -67,7 +68,7 @@
         {% endif %}
       {% endblock %}
       <nav class="navbar navbar-expand-lg navbar-light">
-        <hgroup class="{{ g.header_class }} navbar-left col-md-2">
+        <div class="{{ g.header_class }} navbar-left col-md-2">
           {% block header_logo %}
             {% if g.site_logo %}
               <a class="logo" href="{{ h.url_for('home.index') }}">
@@ -81,7 +82,7 @@
               {% endif %}
             {% endif %}
           {% endblock %}
-        </hgroup>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-toggle"
           aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}">
           <span class="fa fa-bars"></span>
@@ -92,45 +93,26 @@
               {% block header_site_navigation_tabs %}
                 {% set org_type = h.default_group_type('organization') %}
                 {% set group_type = h.default_group_type('group') %}
-                {{ h.build_nav_main(
-                  (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), ["dataset", "resource"]),
-                  (org_type ~ '.index',
-                    h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
-                  (group_type ~ '.index',
-                    h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
-                  ('home.about', _('About')) ) }}
+
+                {{ nav.link(h.url_for(dataset_type ~ '.search'), h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), active_blueprints=[dataset_type, dataset_type + '_resource']) }}
+                {{ nav.link(h.url_for(org_type ~ '.index'), h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), active_blueprints=[org_type]) }}
+                {{ nav.link(h.url_for(group_type ~ '.index'), h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), active_blueprints=[group_type]) }}
+                {{ nav.link(h.url_for('home.about'), _('About')) }}
               {% endblock %}
             </ul>
-        {% endblock %}
-        {% if not c.userobj %}
-          {% block header_account_notlogged %}
-            <div class="col-md-2 login-btn-container">
-              <a class="btn btn-primary" href="{{ h.url_for('user.login') }}">
-                {{ _('Login') }}
-                <i class="fa fa-sign-in"></i>
-              </a>
-            </div>
           {% endblock %}
-        {% endif %}
+          {% block header_account_notlogged %}
+            {% if not c.userobj %}
+              <div class="col-md-2 login">
+                <a class="btn btn-primary" href="{{ h.url_for('user.login') }}">
+                  {{ _('Login') }}
+                  <i class="fa fa-sign-in"></i>
+                </a>
+              </div>
+            {% endif %}
+          {% endblock %}
         </div>
       </nav>
     </div>
   </header>
-  <div class="in-progress">
-          <div class="container">
-            <p class="row">
-              <span class="in-progress-content col-sm-9">
-                <span class="h4">UI Revamp project</span>
-                Work in progress. Share your feedback as you observe how the new design comes to life.
-              </span>
-              <span class="col-sm-3 feedback-button">
-                <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/ckan/ckan/discussions/8399">
-                  Share feedback
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </span>
-            </p>
-          </div>
-      </div>
-  </div>
 {% endblock %}

@@ -7,6 +7,9 @@ $notificationsBg: #C9403A;
     .account {
         float: right;
         ul {
+            display: inline-flex;
+            justify-content: center;
+            align-items: baseline;
             li {
                 display: block;
                 float: left;
@@ -14,7 +17,7 @@ $notificationsBg: #C9403A;
                 a {
                     display: block;
                     text-decoration: none;
-                    color: mix($mastheadBackgroundColor, $mastheadLinkColor, 25%);
+                    color: $link-color;
                     font-size: 13px;
                     font-weight: bold;
                     padding: 0 10px;
@@ -29,17 +32,16 @@ $notificationsBg: #C9403A;
                         left: -9999px;
                     }
                     &:hover {
-                        color: mix($mastheadBackgroundColor, $mastheadLinkColor, 15%);
+                        color: $link-hover-color;
                         background-color: darken($mastheadBackgroundColor, 15%);
                         text-decoration: none;
                     }
                     &.sub {
                         font-weight: 300;
                     }
-                    .btn {
-                        vertical-align: 1px;
-                        margin-left: 3px;
-                    }
+                }
+                .btn-link {
+                    border-radius: 0;
                 }
             }
         }
@@ -68,7 +70,6 @@ $notificationsBg: #C9403A;
         }
         &.authed {
             .image {
-                padding: 0 6px;
                 img {
                     @include border-radius(4px);
                 }
@@ -120,11 +121,18 @@ $notificationsBg: #C9403A;
             display: inline-block;
             img {
                 max-height: $logoMaxHeight;
+                vertical-align: unset;
             }
         }
     }
     .main-navbar {
         ul {
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px 0;
+            @include media-breakpoint-up(md){
+                gap: 24px
+            }
             li {
                 margin-right: 2px;
                 a {
@@ -138,8 +146,8 @@ $notificationsBg: #C9403A;
                 &.active {
                     a {
                         border-radius: $border-radius-sm;
-                        background-color: $brand-50;
-                        color: $brand-800;
+                        background-color: $brand-100;
+                        color: $brand-900;
                     }
                 }
                 &.active {
@@ -149,15 +157,8 @@ $notificationsBg: #C9403A;
                 }
             }
         }
-        .site-search {
-            button {
-                display: flex;
-                align-items: center;
-                margin-left: -50px;
-            }
-        }
     }
-    .login-btn-container {
+    .login {
         display: flex;
         justify-content: flex-end;
     }
@@ -175,7 +176,7 @@ $notificationsBg: #C9403A;
                         padding: $nav-link-padding-y $nav-link-padding-x;
                         @include font-size($nav-link-font-size);
                         font-weight: $nav-link-font-weight;
-                        color: $brand-800;
+                        color: $brand-900;
                         text-decoration: if($link-decoration == none, null, none);
                         @include transition($nav-link-transition);
 
@@ -194,8 +195,7 @@ $notificationsBg: #C9403A;
                 }
             }
         }
-        .login-btn-container {
-            display: flex;
+        .login {
             justify-content: flex-start;
         }
     }

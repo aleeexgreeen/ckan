@@ -69,23 +69,23 @@ $colors: (
 // scss-docs-end colors-map
 
 // brand colors
-$brand-50: #D2DAEA;
-$brand-100: #93a1b8;
-$brand-200: #6d83ab;
-$brand-300: #4c669e;
-$brand-400: #2f4b91;
-$brand-500: #153084;
-$brand-600: #0a1d5e;
-$brand-700: #030d38;
-$brand-800: #000312;
+$brand-100: #D2DAEA;
+$brand-200: #93a1b8;
+$brand-300: #6d83ab;
+$brand-400: #4c669e;
+$brand-500: #2f4b91;
+$brand-600: #153084;
+$brand-700: #0a1d5e;
+$brand-800: #030d38;
+$brand-900: #000312;
 // brand colors
 
 // scss-docs-start theme-color-variables
-$primary:       $brand-500 !default;
+$primary:       $brand-600 !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
-$info:          $blue !default;
-$warning:       $orange !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $white !default;
 $dark:          $gray-900 !default;
@@ -534,11 +534,9 @@ $aspect-ratios: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      "Noto Sans", sans-serif !default;
+$font-family-sans-serif:      'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo,  fMonaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
@@ -1094,7 +1092,7 @@ $navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-dark-toggler-border-color:  $white !default;
 
-$navbar-light-color:                $black !default;
+$navbar-light-color:                rgba($black, .55) !default;
 $navbar-light-hover-color:          rgba($black, .7) !default;
 $navbar-light-active-color:         rgba($black, .9) !default;
 $navbar-light-disabled-color:       rgba($black, .3) !default;
@@ -1341,7 +1339,7 @@ $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
 
 // scss-docs-start badge-variables
 $badge-font-size:                   .75em !default;
-$badge-font-weight:                 600 !default;
+$badge-font-weight:                 $font-semi-bold !default;
 $badge-color:                       $white !default;
 $badge-padding-y:                   .125em !default;
 $badge-padding-x:                   .5em !default;
