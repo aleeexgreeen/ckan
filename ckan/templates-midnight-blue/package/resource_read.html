@@ -23,9 +23,9 @@
     <section class="module module-resource" role="complementary">
       {% block resource_inner %}
       <div class="module-content">
-        <div class="actions">
+        <div class="actions col-12">
           {% block resource_actions %}
-            <ul class="d-flex flex-wrap gap-1 justify-content-end">
+            <ul class="d-flex flex-wrap gap-1 justify-content-end mb-0">
               {% block resource_actions_inner %}
                 {% block action_manage %}
                   {% if h.check_access('package_update', {'id':pkg.id }) %}
