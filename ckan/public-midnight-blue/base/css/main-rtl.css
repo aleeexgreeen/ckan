@@ -2185,7 +2185,7 @@ progress {
 .form-control:focus {
   color: #101828;
   background-color: #fff;
-  border-color: #2f4b91;
+  border-color: #153084;
   outline: 0;
   box-shadow: var(--bs-box-shadow-inset), 0 0 0 0.25rem rgba(21, 48, 132, 0.25);
 }
@@ -2332,7 +2332,7 @@ textarea.form-control-lg {
   }
 }
 .form-select:focus {
-  border-color: #2f4b91;
+  border-color: #153084;
   outline: 0;
   box-shadow: 0, 0 0 0 0.25rem rgba(21, 48, 132, 0.25);
 }
@@ -2417,7 +2417,7 @@ textarea.form-control-lg {
   filter: brightness(90%);
 }
 .form-check-input:focus {
-  border-color: #2f4b91;
+  border-color: #153084;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(21, 48, 132, 0.25);
 }
@@ -2464,7 +2464,7 @@ textarea.form-control-lg {
   }
 }
 .form-switch .form-check-input:focus {
-  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%232f4b91'/%3e%3c/svg%3e");
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23153084'/%3e%3c/svg%3e");
 }
 .form-switch .form-check-input:checked {
   background-position: right center;
@@ -12655,50 +12655,6 @@ h1.page-heading, .page-heading.h1 {
   stroke-linejoin: round;
 }
 
-aside .accordion .accordion-item {
-  background-color: unset;
-  border: unset;
-  border-radius: 0.5rem;
-}
-aside .accordion .accordion-item:has(.accordion-button:disabled), aside .accordion .accordion-item .module-content {
-  background-color: #f2f4f7;
-}
-aside .accordion .accordion-item .module-content {
-  padding: 1rem;
-}
-aside .accordion .accordion-button:not(.collapsed) {
-  box-shadow: none;
-  background-color: #153084;
-  color: #fff;
-}
-aside .accordion .accordion-button:not(.collapsed) .filter-svg {
-  stroke: #fff;
-}
-aside .accordion .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-aside .accordion .accordion-button {
-  background-color: #f2f4f7;
-}
-aside .accordion .accordion-button:disabled::after {
-  background-image: none;
-}
-aside .accordion .module-heading {
-  border-radius: 0.5rem;
-  font-weight: 400;
-  display: flex;
-  padding: 9px 16px 10px 14px;
-  align-items: center;
-  gap: 9px;
-}
-aside .accordion nav {
-  padding: 0.5rem;
-}
-aside .accordion .accordion-collapse.show {
-  background-color: #f2f4f7;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
 .module-narrow .nav-item > a,
 .module-narrow .nav-aside li a {
   padding-left: 1rem;
@@ -14259,10 +14215,6 @@ td.diff_header {
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 
-.toolbar .breadcrumb .active {
-  color: #667085;
-}
-
 .toolbar .breadcrumb a {
   color: #667085;
 }
@@ -14275,7 +14227,7 @@ td.diff_header {
 }
 .toolbar .breadcrumb .active a,
 .toolbar .breadcrumb a.active {
-  color: #0A1D5E;
+  color: #0a1d5e;
   font-weight: 600;
 }
 
@@ -14663,9 +14615,6 @@ td.diff_header {
   color: #fff;
   font-size: 60px;
   font-weight: 700;
-}
-.homepage h2, .homepage .h2 {
-  color: #0A1D5E;
 }
 .homepage .module-search {
   color: #000;
@@ -15751,7 +15700,7 @@ td.diff_header {
 }
 .accordion-button:focus {
   z-index: 3;
-  border-color: #2f4b91;
+  border-color: #153084;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(21, 48, 132, 0.25);
 }
@@ -15786,6 +15735,50 @@ td.diff_header {
 }
 .accordion-flush .accordion-item .accordion-button {
   border-radius: 0;
+}
+
+.secondary .accordion .accordion-item {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+}
+.secondary .accordion .accordion-item:has(.accordion-button:disabled), .secondary .accordion .accordion-item .module-content {
+  background-color: #f2f4f7;
+}
+.secondary .accordion .accordion-item .module-content {
+  padding: 1rem;
+}
+.secondary .accordion .accordion-button:not(.collapsed) {
+  box-shadow: none;
+  background-color: #153084;
+  color: #fff;
+}
+.secondary .accordion .accordion-button:not(.collapsed) .filter-svg {
+  stroke: #fff;
+}
+.secondary .accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.secondary .accordion .accordion-button {
+  background-color: #f2f4f7;
+}
+.secondary .accordion .accordion-button:disabled::after {
+  background-image: none;
+}
+.secondary .accordion .module-heading {
+  border-radius: 0.5rem;
+  font-weight: 400;
+  display: flex;
+  padding: 9px 16px 10px 14px;
+  align-items: center;
+  gap: 9px;
+}
+.secondary .accordion nav {
+  padding: 0.5rem;
+}
+.secondary .accordion .accordion-collapse.show {
+  background-color: #f2f4f7;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 @font-face {
