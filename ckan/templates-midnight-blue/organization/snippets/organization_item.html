@@ -1,27 +1,28 @@
 {#
-Renders a media item for a organization. This should be used in a list.
+Renders a card for a organization. This should be used in a list.
 
 organization - A organization dict.
 
 Example:
 
-    <ul class="media-grid">
+    <ul class="group-list">
       {% for organization in organizations %}
         {% snippet "organization/snippets/organization_item.html", organization=organization %}
       {% endfor %}
     </ul>
 #}
+
 {% set url = h.url_for(organization.type ~ '.read', id=organization.name) %}
 {% block item %}
-<li class="org-cards">
+<li class="groups-cards">
     {% block link %}
     {% set view_label = _('Open details page for {name}').format(name=organization.display_name) %}
-    <a href="{{ url }}"  class="group-list" aria-label="{{ view_label }}" data-bs-title="{{ view_label }}" data-bs-toggle="tooltip">
+    <a href="{{ url }}" aria-label="{{ view_label }}" data-bs-title="{{ view_label }}" data-bs-toggle="tooltip">
       {% block item_inner %}
         {% block image %}
-        <figure class="module-image">
-          <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-200x50.png') }}" alt="{{ organization.name }}" class="img-fluid media-image">
-        </figure>
+        <div class="module-image">
+          <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.svg') }}" alt="{{ organization.name }}" class="img-fluid">
+        </div>
         {% endblock %}
           {% block title %}
             <h3>{{ organization.display_name }}</h3>

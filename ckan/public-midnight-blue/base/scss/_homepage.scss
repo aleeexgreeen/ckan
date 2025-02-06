@@ -1,4 +1,5 @@
 .homepage {
+    overflow: hidden;
     .hero {
         padding: 20px;
         .container{
@@ -19,7 +20,10 @@
     h1 {
         color: $white;
         font-size: 60px;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
+    }
+    h2 {
+        margin-bottom: 1rem;
     }
     .module-search {
         color: $mastheadTextColor;
@@ -29,19 +33,16 @@
         align-items: flex-end;
         gap: 24px;
         .search-form {
-            @include border-radius($card-border-radius);
-            margin-bottom: unset;
-            padding-bottom: unset;
-            input {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            .search-input {
                 font-size: 16px;
-            }
-        }
-        .search-input {
-            color: $black;
-            display: flex;
-            bottom {
-                margin-left: -30px;
-                align-items: center;
+                color: $black;
+                display: flex;
+                button {
+                    margin-top: -12px;
+                }
             }
         }
         h2 {
@@ -60,7 +61,7 @@
     }
     .module-feeds {
         padding: $spacer * 2 0;
-        &.groups, &.org {
+        &:nth-of-type(even) {
             background: $layoutBackgroundColor;
         }
         .featured-groups {
@@ -118,7 +119,6 @@
         .module-promotion {
             text-align: center;
             p {
-                color: #93a1e9;
                 font-size: 16px;
             }
         }
@@ -132,26 +132,15 @@
             h2 {
                 font-size: 36px;
                 text-align: center;
-                display: grid;
-                margin-bottom: 24px;
-                font-weight: 700;
             }
             h2 span {
-                color: $white;
                 font-size: 16px;
-                font-weight: 400;
+                font-weight: $font-weight-normal;
             }
         }
         .module-feeds {
             .featured-groups {
                 grid-template-columns: none;
-                .group-card h3 {
-                    margin: 0;
-                }
-            }
-            .card {
-                margin-top: $spacer * 1;
-                margin-bottom: $spacer * 1;
             }
             .recent-packages {
                 display: grid;
@@ -162,42 +151,5 @@
             }
         }
     }
-}
-.org-cards {
-    list-style: none;
-    background-color: $white;
-    border: none;
-    border-radius: 6px;
-    a {
-        display: grid;
-        img {
-            max-width: 200;
-            max-height: 50;
-        }
-    }
-    h3 {
-        margin: 16px 0;
-    }
-}
-
-.group-card {
-    list-style: none;
-    background-color: $white;
-    border: none;
-    border-radius: 6px;
-    a {
-        display: grid;
-    }
-    h3 {
-        margin: 16px 0;
-    }
-    input {
-        margin: 0 1rem 1rem;
-    }
-}
-
-.organization-group {
-    padding-left: 0;
-    width: 100%;
 }
 

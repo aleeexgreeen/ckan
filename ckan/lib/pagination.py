@@ -640,10 +640,8 @@ class Page(BasePage):
             )
         params = dict(
             format=str(wrapper),
-            symbol_previous={tags.i(cls='fa-solid fa-chevron-left'),
-                             tags.span("Previous page", cls='sr-only')},
-            symbol_next={tags.i(cls='fa-solid fa-chevron-right'),
-                         tags.span("Next page", cls='sr-only')},
+            symbol_previous=tags.i(cls='fa-solid fa-chevron-left'),
+            symbol_next=tags.i(cls='fa-solid fa-chevron-right'),
             curpage_attr={u"class": u"page-item active"},
             link_attr={"class": "page-link"},
         )

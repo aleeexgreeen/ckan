@@ -1,13 +1,13 @@
 {#
-Renders the login form.
-
-action        - The url that the form should be submitted to.
-error_summary - A tuple/list of form errors.
-
-Example:
-
-  {% snippet "user/snippets/login_form.html", action=g.login_handler, error_summary=error_summary %}
-
+  Renders the login form.
+  
+  action        - The url that the form should be submitted to.
+  error_summary - A tuple/list of form errors.
+  
+  Example:
+  
+    {% snippet "user/snippets/login_form.html", action=g.login_handler, error_summary=error_summary %}
+  
 #}
 {% import 'macros/form.html' as form %}
 
@@ -20,11 +20,9 @@ Example:
 
   {{ form.input('login', label=_("Username or Email"), id='field-login', value="", icon='user', error=username_error, classes=["control-medium"]) }}
 
-  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fingerprint", error=password_error, classes=["control-medium form_password"]) }}
-  <div class="forgotten_password">
-    <a class="col-12" href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
-    {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000") }}
-  </div>
+  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", icon="fingerprint", error=password_error, classes=["control-medium"]) }}
+  <a class="col-12" href="{{ h.url_for('user.request_reset') }}">{{ _('Forgotten your password?') }}</a>
+  {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000", classes=["mt-3"]) }}
 
   {% if g.recaptcha_publickey %}
     {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}

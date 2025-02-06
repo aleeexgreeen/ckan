@@ -1,7 +1,6 @@
 {% set organizations = h.get_featured_organizations(count=6) %}
 
-<h2>Organizations</h2>
-<p> Browse organizations involved in dataset distribution</p>
+<h2>{{ _("Organizations") }}</h2>
 <ul class="featured-groups">
   {% for organization in organizations %}
     {% snippet 'organization/snippets/organization_item.html', organization=organization %}

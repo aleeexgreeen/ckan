@@ -38,16 +38,22 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #3395ff !default;
-$indigo:  #6172f3 !default; 
-$purple:  #5234ed !default;
-$pink:    #f63d68 !default;
-$red:     #da1e28 !default;
-$orange:  #ef5c03 !default;
-$yellow:  #fce61e !default;
-$green:   #277e59 !default;
-$teal:    #07d8b0 !default;
-$cyan:    #06d1ff !default;
+$blue:    #206b82 !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #d9534f !default;
+$orange:  #fd7e14 !default;
+$yellow:  #fd7e14 !default;
+$green:   #3A833A !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+$dust-red: #cf1322 !default;
+$volcano: #d84a1b !default;
+$sunset-orange: #d87a16 !default;
+$calendula-gold: #d89614 !default;
+$polar-green: #52c41a !default;
+$golden-purple: #722ed1 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -470,7 +476,7 @@ $gutters: $spacers !default;
 
 // Container padding
 
-$container-padding-x: $grid-gutter-width * .5 !default;
+$container-padding-x: $grid-gutter-width !default;
 
 
 // Components
@@ -1301,11 +1307,11 @@ $popover-box-shadow:                $box-shadow !default;
 $popover-header-bg:                 $gray-100 !default;
 $popover-header-color:              $headings-color !default;
 $popover-header-padding-y:          .5rem !default;
-$popover-header-padding-x:          $spacer-ck-2 !default;
+$popover-header-padding-x:          $spacer * 0.75 !default;
 
 $popover-body-color:                $body-color !default;
-$popover-body-padding-y:            $spacer-ck-2 !default;
-$popover-body-padding-x:            $spacer-ck-2 !default;
+$popover-body-padding-y:            $spacer * 0.75 !default;
+$popover-body-padding-x:            $spacer * 0.75 !default;
 
 $popover-arrow-width:               1rem !default;
 $popover-arrow-height:              .5rem !default;

@@ -7,10 +7,10 @@
 
     {% block core_fields %}
       {% block required_core_fields %}
-        {{ form.input("name", id="field-username", label=_("Username"), placeholder="", value=data.name, icon='fa-regular fa-user', error=errors.name, classes=["control-medium"], is_required=True) }}
-        {{ form.input("email", id="field-email", label=_("Email"), type="email", placeholder="", value=data.email, icon='fa-regular fa-envelope', error=errors.email, classes=["control-medium"], is_required=True) }}
-        {{ form.input("password1", id="field-password", label=_("Password"), type="password", placeholder="", value=data.password1, icon="fa-solid fa-fingerprint", error=errors.password1, classes=["control-medium"], is_required=True) }}
-        {{ form.input("password2", id="field-confirm-password", label=_("Confirm"), type="password", placeholder="", value=data.password2, icon="fa-solid fa-fingerprint", error=errors.password2, classes=["control-medium"], is_required=True) }}
+        {{ form.input("name", id="field-username", label=_("Username"), placeholder="", value=data.name, icon='user', error=errors.name, classes=["control-medium"], is_required=True) }}
+        {{ form.input("email", id="field-email", label=_("Email"), type="email", placeholder="", value=data.email, icon='envelope', error=errors.email, classes=["control-medium"], is_required=True) }}
+        {{ form.input("password1", id="field-password", label=_("Password"), type="password", placeholder="", value=data.password1, icon="fingerprint", error=errors.password1, classes=["control-medium"], is_required=True) }}
+        {{ form.input("password2", id="field-confirm-password", label=_("Confirm"), type="password", placeholder="", value=data.password2, icon="fingerprint", error=errors.password2, classes=["control-medium"], is_required=True) }}
       {% endblock %}
     {% endblock %}
 

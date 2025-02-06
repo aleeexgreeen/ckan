@@ -8,33 +8,30 @@
   <li class="active">{% link_for _('Password Reset'), named_route='user.request_reset' %}</li>
 {% endblock %}
 
-{% block primary_content_inner %}
-  {% block form %}
-    <form action="" class="reset_form" method="post">
-      {{ h.csrf_input() }}
-      <div class="form-group">
-        <label for="field-username">{{ _('Email or username') }}</label>
-        <input id="field-username" class="control-medium form-control" name="user" value="" type="text" />
-      </div>
-      {% if g.recaptcha_publickey %}
-        {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
-      {% endif %}
-      <div class="form-actions">
-        {% block form_button %}
-          <button class="btn btn-primary" type="submit" name="reset">{{ _("Request Reset") }}</button>
-        {% endblock form_button %}
-      </div>
-    </form>
-  {% endblock form %}
-{% endblock primary_content_inner %}
+{% block form %}
+  <form action="" class="reset_form" method="post">
+    {{ h.csrf_input() }}
+    <div class="form-group">
+      <label for="field-username">{{ _('Email or username') }}</label>
+      <input id="field-username" class="control-medium form-control" name="user" value="" type="text" />
+    </div>
+    {% if g.recaptcha_publickey %}
+      {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
+    {% endif %}
+    <div class="form-actions">
+      {% block form_button %}
+        <button class="btn btn-primary" type="submit" name="reset">{{ _("Request Reset") }}</button>
+      {% endblock form_button %}
+    </div>
+  </form>
+{% endblock form %}
 
-{% block login_content %}
+{% block primary_content_inner %}
   {% block help %}
       {% block help_inner %}
-        <h2 class="h5">{{ _('How does this work?') }}</h2>
         <p>{% trans %}Enter your email address or username into the box and we
             will send you an email with a link to enter a new password.
             {% endtrans %}</p>
       {% endblock help_inner %}
   {% endblock help %}
-{% endblock login_content %}
+{% endblock primary_content_inner %}
