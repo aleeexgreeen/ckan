@@ -88,12 +88,12 @@ $brand-900: #000312;
 
 // scss-docs-start theme-color-variables
 $primary:       $brand-600 !default;
-$secondary:     $gray-600 !default;
+$secondary:     $gray-500 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $white !default;
+$danger:        darken($red, 5%) !default;
+$light:         $gray-100 !default;
 $dark:          $gray-900 !default;
 // scss-docs-end theme-color-variables
 
