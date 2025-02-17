@@ -12766,6 +12766,7 @@ h1.page-heading, .page-heading.h1 {
 @media (max-width: 767.98px) {
   .secondary .nav-items {
     background-color: transparent;
+    border-bottom: none;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: scroll;
