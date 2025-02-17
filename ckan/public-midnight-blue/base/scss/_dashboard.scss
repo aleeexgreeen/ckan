@@ -33,7 +33,8 @@
         flex-direction: column;
     }
     .caret {
-        align-content: center;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -63,39 +64,34 @@
 }
 
 .followee-container {
-    padding:0;
     .popover-title {
         display: none;
     }
-
     .empty {
         padding: 10px;
     }
-
-        padding: 0;
-        margin: 0;
-        max-height: 205px;
-        overflow: auto;
-        @include border-radius(0 0 3px 3px);
-        li {
+    padding: 0;
+    margin: 0;
+    max-height: 205px;
+    overflow: auto;
+    @include border-radius(0 0 3px 3px);
+    li {
+        i {
+            margin-right: 11px;
+            padding: 3px 5px;
+            line-height: 1;
+        }
+        &:hover,  &.active {
+            background: $primary;
+            a  { color: $white;}
             i {
-                margin-right: 11px;
-                padding: 3px 5px;
-                line-height: 1;
+                background-color: $layoutLinkColor;
+                color: $inputBackground;
+
+                @include border-radius(100px);
+                @include box-shadow(inset 0 1px 2x rgba(0, 0, 0, 0.2));
             }
-            &:hover,  &.active {
-                background: $primary;
-                a  { color: $white;}
-                i {
-                    background-color: $layoutLinkColor;
-                    color: $inputBackground;
-
-                    @include border-radius(100px);
-                    @include box-shadow(inset 0 1px 2x rgba(0, 0, 0, 0.2));
-                }
-
-            }
-
+        }
     }
 }
 
@@ -112,11 +108,6 @@
         font-size: 16px;
         margin: 3px 0;
     }
-}
-
-.dashboard.page-header {
-    margin-top: 0;
-    padding-top: 0;
 }
 
 .dashboard-container {

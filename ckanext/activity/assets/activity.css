@@ -34,9 +34,10 @@
   display: flex;
   gap: 0.5rem;
 }
-.activity_buttons > a.btn.disabled {
-  color: inherit;
-  opacity: 0.7;
+@media (max-width: 768px) {
+  .activity_buttons {
+    flex-direction: column;
+  }
 }
 
 .popover {
@@ -78,7 +79,7 @@
   color: #650d73;
 }
 .activity .item.changed-package_extra .icon {
-  color: #210d73;
+  color: #769ace;
 }
 .activity .item.changed-resource .icon {
   color: #730d5f;
@@ -111,7 +112,7 @@
   color: #03689b;
 }
 .activity .item.new-package_extra .icon {
-  color: #039b68;
+  color: #6ca669;
 }
 .activity .item.new-resource .icon {
   color: #039b36;

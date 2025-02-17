@@ -22,7 +22,6 @@ this.ckan.module('dashboard', function ($) {
       this.button = $('#followee-filter .followee-toggle').
         on('click', this._onShowFolloweeDropdown);
       var title = this.button.prop('title');
-
       this.button.popover = new bootstrap.Popover(document.querySelector('#followee-filter .followee-toggle'), {
           placement: 'bottom',
           html: true,
@@ -32,7 +31,6 @@ this.ckan.module('dashboard', function ($) {
             return DOMPurify.sanitize(content, { ALLOWED_TAGS: [
               "form", "div", "input", "footer", "header", "h1", "h2", "h3", "h4",
               "small", "span", "strong", "i", 'a', 'li', 'ul','p'
-
             ]});
           },
           content: $('#followee-content').html()
