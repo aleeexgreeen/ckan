@@ -36,7 +36,7 @@
     <div>
       <h2 class="d-sm-block d-md-none">Filter results</h2>
       {% for facet in facet_titles %}
-        {% snippet 'snippets/facet_list.html', title=facet_titles[facet], name=facet, extras={'id':group_dict.id}, search_facets=search_facets %}
+        {% snippet 'snippets/facet_list.html', title=facet_titles[facet], name=facet, extras={'id':group_dict.id}, search_facets=search_facets, default_collapsed = h.default_collapse_facets() %}
       {% endfor %}
     </div>
   </div>

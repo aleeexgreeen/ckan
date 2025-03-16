@@ -15726,6 +15726,7 @@ td.diff_header {
 }
 .secondary .accordion .accordion-item .module-content {
   padding: 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 .secondary .accordion .accordion-button:not(.collapsed) {
   box-shadow: none;

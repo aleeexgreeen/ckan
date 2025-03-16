@@ -304,6 +304,17 @@ def get_site_protocol_and_host() -> Union[tuple[str, str], tuple[None, None]]:
     return (None, None)
 
 
+@core_helper
+def default_collapse_facets():
+    '''Returns config option for `ckan.default_collapse_facets`.
+    If true, the facets in the secondary will be collapsed by default.
+    If false, the facets will all be open, unless closed by the user.
+    
+    Default is false
+    '''
+    return config.get('ckan.default_collapse_facets')
+
+
 def _get_auto_flask_context():
     '''
     Provides a Flask test request context if we are outside the context

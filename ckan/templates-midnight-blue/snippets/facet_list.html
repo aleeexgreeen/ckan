@@ -46,8 +46,9 @@ Dictionary with search facets
 		    {% block facet_list_heading %}
 			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
 				{% set active_facet = h.currently_active_facet(name) %}
+				{% set collapsed = "collapsed" if default_collapsed and not active_facet else "" %}
 				<h2 class="accordion-header">
-					<button class="module-heading accordion-button {% if not active_facet -%}collapsed{%- endif -%}"
+					<button class="module-heading accordion-button {% if not items -%} collapsed {%- else -%} {{ collapsed }} {%- endif %}"
 						type="button"
 						data-bs-toggle="collapse"
 						data-bs-target="#{{ title }}"
@@ -63,8 +64,9 @@ Dictionary with search facets
 		    {% block facet_list_items %}
 			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
 				{% set active_facet = h.currently_active_facet(name) %}
+				{% set collapse_show = "show" if active_facet or not default_collapsed else "collapse" %}
 			    {% if items %}
-				<nav id="{{ title }}" class="accordion-collapse collapse {% if active_facet -%}show{%- endif -%}" aria-label="{{ _('Filter by: {title}').format(title=title) }}">
+				<nav id="{{ title }}" class="accordion-collapse {{ collapse_show }}" aria-label="{{ _('Filter by: {title}').format(title=title) }}">
 				    <ul class="list-unstyled nav nav-simple nav-facet">
 					{% for item in items %}
 					    {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
