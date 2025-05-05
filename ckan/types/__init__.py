@@ -42,7 +42,7 @@ __all__ = [
     "PFeed", "PFeedFactory", "PResourceUploader", "PUploader",
 ]
 
-AlchemySession = ScopedSession[Any]
+AlchemySession = ScopedSession
 
 Config: TypeAlias = Dict[str, Union[str, Mapping[str, str]]]
 CKANApp = Any
