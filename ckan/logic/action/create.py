@@ -16,9 +16,6 @@ import six
 import ckan.lib.plugins as lib_plugins
 import ckan.logic as logic
 import ckan.plugins as plugins
-import ckan.lib.dictization
-import ckan.logic.validators
-import ckan.logic.action
 import ckan.logic.schema
 import ckan.lib.dictization.model_dictize as model_dictize
 import ckan.lib.dictization.model_save as model_save
@@ -699,15 +696,8 @@ def _group_or_org_create(context: Context,
 
     if context.get("schema"):
         schema: Schema = context["schema"]
-    elif hasattr(group_plugin, "create_group_schema"):
-        schema: Schema = group_plugin.create_group_schema()
-    # TODO: remove these fallback deprecated methods in the next release
-    elif hasattr(group_plugin, "form_to_db_schema_options"):
-        schema: Schema = getattr(group_plugin, "form_to_db_schema_options")({
-            'type': 'create', 'api': 'api_version' in context,
-            'context': context})
     else:
-        schema: Schema = group_plugin.form_to_db_schema()
+        schema: Schema = group_plugin.create_group_schema()
 
     data, errors = lib_plugins.plugin_validate(
         group_plugin, context, data_dict, schema,
@@ -1476,5 +1466,5 @@ def api_token_create(context: Context,
     data = api_token.postprocess(data, token_obj.id, validated_data_dict)
     token = api_token.encode(data)
 
-    result = api_token.add_extra({u'token': token})
+    result = api_token.add_extra({'token': token, 'id': token_obj.id})
     return result

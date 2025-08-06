@@ -1,6 +1,5 @@
 // Base variables
 $imagePath: "../../../base/images";
-$bgPath: "#{$imagePath}/bg.png";
 
 // Layout Variables
 $layoutFontFamily: $font-family-sans-serif;
@@ -12,6 +11,7 @@ $layoutTrimBackgroundColor: $white;
 $layoutTrimBorderColor: $gray-400;
 $layoutPrimaryBackgroundColor: $gray-100;
 $logoMaxHeight: 60px;
+$logoMinHeight: 48px;
 
 $navLinkColor: $gray-900;
 $navActiveBackgroundColor: $gray-100;
@@ -32,7 +32,7 @@ $gutterSmallX: 15px;
 $gutterSmallY: $gutterY;
 
 $emptyTextColor: $gray-500;
-$genericBorderColor: #ddd;
+$genericBorderColor: $gray-300;
 
 $breadcrumbTextColor: #505050;
 

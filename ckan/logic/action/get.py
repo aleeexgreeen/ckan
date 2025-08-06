@@ -18,7 +18,6 @@ from sqlalchemy import text
 import ckan
 import ckan.lib.dictization
 import ckan.logic as logic
-import ckan.logic.action
 import ckan.logic.schema
 import ckan.lib.dictization.model_dictize as model_dictize
 import ckan.lib.jobs as jobs
@@ -1188,15 +1187,8 @@ def _group_or_org_show(
 
     if context.get("schema"):
         schema: Schema = context["schema"]
-    elif hasattr(group_plugin, "show_group_schema"):
-        schema: Schema = group_plugin.show_group_schema()
-    # TODO: remove these fallback deprecated methods in the next release
-    elif hasattr(group_plugin, "db_to_form_schema_options"):
-        schema: Schema = getattr(group_plugin, "db_to_form_schema_options")({
-            'type': 'show', 'api': 'api_version' in context,
-            'context': context})
     else:
-        schema: Schema = group_plugin.db_to_form_schema()
+        schema: Schema = group_plugin.show_group_schema()
 
     if include_followers:
         context = plugins.toolkit.fresh_context(context)
@@ -3169,7 +3161,7 @@ def api_token_list(
 
     :param string user_id: The user ID or name
 
-    :returns: collection of all API Tokens
+    :returns: collection of all API Tokens from oldest to newest
     :rtype: list
 
     .. versionadded:: 2.9
@@ -3184,4 +3176,5 @@ def api_token_list(
     if user is None:
         raise NotFound("User not found")
     tokens = model.Session.query(model.ApiToken).filter_by(user_id=user.id)
+    tokens = tokens.order_by(model.ApiToken.created_at)
     return model_dictize.api_token_list_dictize(tokens, context)
